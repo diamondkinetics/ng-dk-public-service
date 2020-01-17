@@ -12,6 +12,6 @@
 	<br>
 	<button type="submit">Login</button>
 </form>
-<div *ngIf="xAuthToken$ | async as xAuthToken">
-	<p>X-AUTH-TOKEN: {{ xAuthToken }}</p>
+<div *ngIf="result$ | async as result">
+	<p>Result: {{ result }}</p>
 </div>

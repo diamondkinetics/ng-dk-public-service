@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 import { AuthService } from 'projects/ng-dk-public-service/src/lib/service/http';
 
@@ -11,7 +12,7 @@ import { AuthService } from 'projects/ng-dk-public-service/src/lib/service/http'
 })
 export class AuthComponent implements OnInit {
 
-	public xAuthToken$: Observable<string>;
+	public result$: Observable<string>;
 	public loginForm: FormGroup;
 	public emailOrNicknameFormControl: FormControl;
 	public passwordFormControl: FormControl;
@@ -28,9 +29,13 @@ export class AuthComponent implements OnInit {
 	}
 
 	public login(): void {
-		this.xAuthToken$ = this.authService.login(
+		this.result$ = this.authService.login(
 			this.loginForm.controls.emailOrNickname.value,
-			this.loginForm.controls.password.value);
+			this.loginForm.controls.password.value)
+		.pipe(
+			map((xAuthToken: string): string => 'success'),
+			catchError((err: any): Observable<string> => of('failure'))
+		);
 	}
 
 }

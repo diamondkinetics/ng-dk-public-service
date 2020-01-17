@@ -6,10 +6,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ServiceModule } from 'projects/ng-dk-public-service/src/lib/service/service.module';
 
 import { AppComponent } from './app.component';
-import { AuthComponent } from './auth/auth.component';
+import { AuthComponent } from './component/auth/auth.component';
 
 import { LocalStorageService } from './service/util/local-storage/local-storage.service';
-import { RequestInterceptor } from './helpers/request-interceptor/request.interceptor';
+import { RequestInterceptor } from './util/request-interceptor/request.interceptor';
 
 @NgModule({
   declarations: [
