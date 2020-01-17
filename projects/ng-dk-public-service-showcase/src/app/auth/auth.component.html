@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+	<input
+		type="email"
+		name="emailOrNickname"
+		placeholder="Email / Nickname"
+		[formControl]="emailOrNicknameFormControl">
+	<br>
+	<input
+		type="password"
+		placeholder="Password"
+		[formControl]="passwordFormControl">
+	<br>
+	<button type="submit">Login</button>
+</form>
+<div *ngIf="xAuthToken$ | async as xAuthToken">
+	<p>X-AUTH-TOKEN: {{ xAuthToken }}</p>
+</div>
