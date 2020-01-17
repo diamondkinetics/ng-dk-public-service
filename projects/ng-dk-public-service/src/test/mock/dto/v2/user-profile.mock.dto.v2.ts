@@ -1,5 +1,5 @@
 import { UserProfileDTOV2 } from '@diamondkinetics/dk-public-dto-ts';
-import { PlayType } from '@diamondkinetics/dk-public-dto-ts/build/main/lib/enum/play-type';
+import { PlayType } from '@diamondkinetics/dk-public-dto-ts';
 
 export const mockUserProfileDTOV2: UserProfileDTOV2 = {
 	accountStatus: 'PAID',
