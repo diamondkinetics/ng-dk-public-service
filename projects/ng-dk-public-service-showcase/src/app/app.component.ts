@@ -12,6 +12,7 @@ import { AuthService } from '@lib/service/http/auth/auth.service';
 })
 export class AppComponent implements OnInit {
 
+	public title = 'ng-dk-public-service-showcase';
 	public result$: Observable<string>;
 	public loginForm: FormGroup;
 	public emailOrNicknameFormControl: FormControl;
