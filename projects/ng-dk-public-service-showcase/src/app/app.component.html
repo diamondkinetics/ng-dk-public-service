@@ -1,0 +1,28 @@
+<h1>ng-dk-public-service-showcase</h1>
+<div class="auth">
+	<h2>Authentication</h2>
+	<form [formGroup]="loginForm" (ngSubmit)="login()">
+		<input
+			type="email"
+			name="emailOrNickname"
+			placeholder="Email / Nickname"
+			[formControl]="emailOrNicknameFormControl">
+		<span *ngIf="emailOrNicknameFormControl.hasError('required') && emailOrNicknameFormControl.touched" class="error">
+			Email/nickname is <strong>required</strong>
+		</span>
+		<br>
+		<input
+			type="password"
+			placeholder="Password"
+			[formControl]="passwordFormControl">
+		<span *ngIf="passwordFormControl.hasError('required') && passwordFormControl.touched" class="error">
+			Password is <strong>required</strong>
+		</span>
+		<br>
+		<button type="submit">Login</button>
+	</form>
+	<div *ngIf="result$ | async as result">
+		<p>Result: {{ result }}</p>
+	</div>
+</div>
+<app-batting-session [loginForm]="loginForm"></app-batting-session>
