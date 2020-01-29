@@ -12,20 +12,20 @@ import { LocalStorageService } from './service/util/local-storage/local-storage.
 import { RequestInterceptor } from './util/request-interceptor/request.interceptor';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BattingSessionComponent
-  ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    ServiceModule
-  ],
-  providers: [
-    LocalStorageService,
+	declarations: [
+		AppComponent,
+		BattingSessionComponent
+	],
+	imports: [
+		BrowserModule,
+		ReactiveFormsModule,
+		HttpClientModule,
+		ServiceModule
+	],
+	providers: [
+		LocalStorageService,
 		{ provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
-  ],
-  bootstrap: [AppComponent]
+	],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
