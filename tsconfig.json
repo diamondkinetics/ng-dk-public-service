@@ -24,6 +24,12 @@
       ],
       "ng-dk-public-service/*": [
         "dist/ng-dk-public-service/*"
+      ],
+      "@lib/*": [
+        "projects/ng-dk-public-service/src/lib/*"
+      ],
+      "@test/*": [
+        "projects/ng-dk-public-service/src/test/*"
       ]
     }
   },
