@@ -1,0 +1,11 @@
+<div class="batting-sessions">
+	<h2>Batting Sessions</h2>
+	<input type="button" (click)="getAllForUser()" value="getAllForUser()">
+	<div *ngIf="battingSessions$ | async as battingSessions">
+		<ul>
+			<li *ngFor="let battingSession of battingSessions">
+				{{ battingSession.creationDate }} - {{ battingSession.uuid }}
+			</li>
+		</ul>
+	</div>
+</div>
