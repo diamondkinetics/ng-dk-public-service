@@ -3,7 +3,7 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-import { AuthService } from 'projects/ng-dk-public-service/src/lib/service/http/auth/auth.service';
+import { AuthService } from '@lib/service/http/auth/auth.service';
 
 @Component({
 	selector: 'app-root',

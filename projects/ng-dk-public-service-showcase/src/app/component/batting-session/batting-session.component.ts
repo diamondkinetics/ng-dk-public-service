@@ -5,11 +5,9 @@ import { tap, flatMap } from 'rxjs/operators';
 
 import { BattingSessionDTOV3 } from '@diamondkinetics/dk-public-dto-ts';
 
-import { AuthService } from 'projects/ng-dk-public-service/src/lib/service/http/auth/auth.service';
-import {
-	BattingSessionServiceV3
-} from 'projects/ng-dk-public-service/src/lib/service/http/v3/batting-session/batting-session.service.v3';
-import { LocalStorageService } from './../../service/util/local-storage/local-storage.service';
+import { AuthService } from '@lib/service/http/auth/auth.service';
+import { BattingSessionServiceV3 } from '@lib/service/http/v3/batting-session/batting-session.service.v3';
+import { LocalStorageService } from '@app/service/util/local-storage/local-storage.service';
 
 @Component({
 	templateUrl: './batting-session.component.html',
