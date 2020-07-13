@@ -12,6 +12,7 @@ import { BattingSessionServiceV3 } from '@lib/service/http/v3/batting-session/ba
 
 
 describe('BattingSessionServiceV3', () => {
+
 	let httpTestingController: HttpTestingController;
 	let service: BattingSessionServiceV3;
 

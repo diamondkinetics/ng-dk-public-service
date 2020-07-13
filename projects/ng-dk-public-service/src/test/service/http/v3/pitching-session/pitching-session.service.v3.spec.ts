@@ -11,6 +11,7 @@ import { ResourceMappings as route } from '@lib/enum/resource-mappings.enum';
 import { PitchingSessionServiceV3 } from '@lib/service/http/v3/pitching-session/pitching-session.service.v3';
 
 describe('PitchingSessionServiceV3', () => {
+
 	let httpTestingController: HttpTestingController;
 	let service: PitchingSessionServiceV3;
 
