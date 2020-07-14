@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { BattingSessionModuleV3 } from './batting-session/batting-session.module.v3';
 import { PitchingSessionModuleV3 } from './pitching-session/pitching-session.module.v3';
+import { UserProfileModuleV3 } from './user-profile/user-profile.module.v3';
 
 @NgModule({
 	imports: [CommonModule],
 	exports: [
+		UserProfileModuleV3,
 		BattingSessionModuleV3,
 		PitchingSessionModuleV3
 	]
