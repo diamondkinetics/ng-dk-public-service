@@ -7,6 +7,7 @@ import { ServiceModule } from 'projects/ng-dk-public-service/src/lib/service/ser
 
 import { AppComponent } from './app.component';
 import { BattingSessionComponent } from './component/batting-session/batting-session.component';
+import { PitchingSessionComponent } from './component/pitching-session/pitching-session.component';
 
 import { LocalStorageService } from './service/util/local-storage/local-storage.service';
 import { RequestInterceptor } from './util/request-interceptor/request.interceptor';
@@ -14,7 +15,8 @@ import { RequestInterceptor } from './util/request-interceptor/request.intercept
 @NgModule({
 	declarations: [
 		AppComponent,
-		BattingSessionComponent
+		BattingSessionComponent,
+		PitchingSessionComponent
 	],
 	imports: [
 		BrowserModule,
