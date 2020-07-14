@@ -14,7 +14,7 @@ export class PitchingSessionModuleV3 {
 		}
 	}
 
-	static forRoot(): ModuleWithProviders {
+	static forRoot(): ModuleWithProviders<PitchingSessionModuleV3> {
 		return {
 			ngModule: PitchingSessionModuleV3,
 			providers: [PitchingSessionServiceV3]
