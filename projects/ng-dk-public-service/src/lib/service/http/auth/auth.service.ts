@@ -12,16 +12,6 @@ export class AuthService {
 	constructor(private http: HttpClient) { }
 
 	/**
-	 * Registers a user in the API with the provided info.
-	 *
-	 * @param   registrationRequest The data to use for the registration.
-	 * @returns                     An observable containing the UserProfile returned from the API.
-	 */
-	public register(registrationRequest: RegisterWithProfileRequestDTOV3): Observable<UserProfileDTOV3> {
-		return this.http.post<UserProfileDTOV3>(`/v2/users`, registrationRequest);
-	}
-
-	/**
 	 * Authenticates a user with the provided information and when successful, the API returns a response containing
 	 * an X-AUTH-TOKEN header. This token is to be used to make any subsequent requests that require authorization.
 	 * Note that we only care about the X-AUTH-TOKEN header value in this response because the body only contains the
