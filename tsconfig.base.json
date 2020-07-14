@@ -33,9 +33,6 @@
       ],
       "~app/*": [
         "projects/ng-dk-public-service-showcase/src/app/*"
-      ],
-      "@diamondkinetics/service/*": [
-        "./dist/lib/service/*"
       ]
     }
   },
