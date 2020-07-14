@@ -1,24 +1,9 @@
-# NgDkPublicService
+# ng-dk-public-service
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+A library of Angular services that integrate with the Diamond Kinetics public API.
 
-## Code scaffolding
+## Notes
 
-Run `ng generate component component-name --project ng-dk-public-service` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-dk-public-service`.
-> Note: Don't forget to add `--project ng-dk-public-service` or else it will be added to the default project in your `angular.json` file. 
-
-## Build
-
-Run `ng build ng-dk-public-service` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build ng-dk-public-service`, go to the dist folder `cd dist/ng-dk-public-service` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ng-dk-public-service` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Any client app utilizing this package will need to implement their own request interceptor in order to hit the correct
+API server based on environment. There is an example of this in
+`projects/ng-dk-public-service-showcase/src/app/util/request-interceptor`.
