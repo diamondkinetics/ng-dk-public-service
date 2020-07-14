@@ -9,13 +9,7 @@
     "lib": [
       "dom",
       "es2018"
-    ],
-    "paths": {
-      "@diamondkinetics/service/*": ["./dist/lib/service/*"],
-      "~lib/*": [
-        "projects/ng-dk-public-service/src/lib/*"
-      ]
-    }
+    ]
   },
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
