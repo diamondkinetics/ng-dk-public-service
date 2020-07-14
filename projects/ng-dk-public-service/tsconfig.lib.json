@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/lib",
     "target": "es2015",
@@ -11,11 +11,13 @@
       "es2018"
     ],
     "paths": {
-      "@diamondkinetics/service/*": ["./dist/lib/service/*"]
+      "@diamondkinetics/service/*": ["./dist/lib/service/*"],
+      "~lib/*": [
+        "projects/ng-dk-public-service/src/lib/*"
+      ]
     }
   },
   "angularCompilerOptions": {
-    "annotateForClosureCompiler": true,
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
     "fullTemplateTypeCheck": true,
