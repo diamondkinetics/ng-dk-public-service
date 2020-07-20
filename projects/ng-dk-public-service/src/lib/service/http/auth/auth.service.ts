@@ -3,8 +3,6 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { UserProfileDTOV3, RegisterWithProfileRequestDTOV3 } from '@diamondkinetics/dk-public-dto-ts';
-
 const AUTH_TOKEN_HEADER = 'X-AUTH-TOKEN';
 
 @Injectable({ providedIn: 'root' })
