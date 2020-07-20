@@ -26,7 +26,8 @@
         "dist/ng-dk-public-service/*"
       ],
       "~lib/*": [
-        "projects/ng-dk-public-service/src/lib/*"
+        "projects/ng-dk-public-service/src/lib/*",
+        "dist/ng-dk-public-service/lib/*"
       ],
       "~test/*": [
         "projects/ng-dk-public-service/src/test/*"

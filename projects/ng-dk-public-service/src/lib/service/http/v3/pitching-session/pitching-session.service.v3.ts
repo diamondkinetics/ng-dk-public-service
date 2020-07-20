@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 
 import { PitchingSessionDTOV3, PitchDTOV3 } from '@diamondkinetics/dk-public-dto-ts';
 
-import { AbstractSensorSessionService } from '~lib/service/http/abstract-sensor-session.service';
-import { ResourceMappings as route } from '~lib/enum/resource-mappings.enum';
+import { AbstractSensorSessionService } from './../../abstract-sensor-session.service';
+import { ResourceMappings as route } from './../../../../enum/resource-mappings.enum';
 
 @Injectable({ providedIn: 'root' })
 export class PitchingSessionServiceV3 extends AbstractSensorSessionService<PitchDTOV3, PitchingSessionDTOV3> {

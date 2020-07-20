@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { UserProfileDTOV3, RegisterWithProfileRequestDTOV3 } from '@diamondkinetics/dk-public-dto-ts';
-import { AbstractResourceService } from '~lib/service/http/abstract-resource.service';
-import { ResourceMappings as route } from '~lib/enum/resource-mappings.enum';
+import { AbstractResourceService } from './../../abstract-resource.service';
+import { ResourceMappings as route } from './../../../../enum/resource-mappings.enum';
 
 @Injectable({ providedIn: 'root' })
 export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTOV3> {
