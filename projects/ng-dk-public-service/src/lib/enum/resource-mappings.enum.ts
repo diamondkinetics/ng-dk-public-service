@@ -5,6 +5,7 @@ export class ResourceMappings {
 	public static GROUPS = new ResourceMappings('groups');
 	public static BATTING_SESSIONS = 'battingSessions';
 	public static PITCHING_SESSIONS = 'pitchingSessions';
+	public static COMPETITION_LEVELS = 'competitionLevels';
 
 	private readonly path: string;
 
