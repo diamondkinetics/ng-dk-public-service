@@ -53,4 +53,18 @@ export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTO
 		return this.http.post<UserProfileDTOV3>(`/${this.getVersionString()}/${route.USER_PROFILE}`, userProfile);
 	}
 
+	/**
+	 * Updates the profile image of the currently logged in user.
+	 * 
+	 * @param   file     The image file to be uploaded.
+	 * @param   fileName The name of the file.
+	 * @returns          An observable containing a UserProfileDTOV3 object with the updated URL to the profile image.
+	 */
+	public updateProfileImage(file: Blob, fileName: string): Observable<UserProfileDTOV3> {
+		const formData = new FormData();
+		formData.append('file', file, fileName);
+
+		return this.http.post<UserProfileDTOV3>(`/${this.getVersionString()}/${route.USER_PROFILE_IMAGE}`, formData);
+	}
+
 }
