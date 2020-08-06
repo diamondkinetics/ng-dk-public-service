@@ -43,4 +43,14 @@ export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTO
 		return this.http.get<UserProfileDTOV3>(`/${this.getVersionString()}/${route.USER_PROFILE}/${forUserUuid}`);
 	}
 
+	/**
+	 * Sets user profile information for the logged in user.
+	 * 
+	 * @param   userProfile The user profile data to set.
+	 * @returns             An observable containing a UserProfileDTOV3 object with the updated profile data.
+	 */
+	public setUserProfile(userProfile: UserProfileDTOV3): Observable<UserProfileDTOV3> {
+		return this.http.post<UserProfileDTOV3>(`/${this.getVersionString()}/${route.USER_PROFILE}`, userProfile);
+	}
+
 }
