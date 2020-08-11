@@ -11,7 +11,7 @@ import { ResourceMappings as route } from './../../../../enum/resource-mappings.
 export class BattingSessionServiceV3 extends AbstractSensorSessionService<SwingDTOV3, BattingSessionDTOV3> {
 
 	constructor(protected http: HttpClient) {
-		super(http, 3, route.BATTING_SESSIONS);
+		super(http, 3, route.BATTING_SESSIONS.getPath);
 	}
 
 	/**

@@ -4,9 +4,11 @@ export class ResourceMappings {
 	public static USER_PROFILE = new ResourceMappings(`${ResourceMappings.USERS}/profile`);
 	public static USER_PROFILE_IMAGE = new ResourceMappings(`${ResourceMappings.USER_PROFILE}/profileImage`);
 	public static GROUPS = new ResourceMappings('groups');
-	public static BATTING_SESSIONS = 'battingSessions';
-	public static PITCHING_SESSIONS = 'pitchingSessions';
-	public static COMPETITION_LEVELS = 'competitionLevels';
+	public static BATTING_SESSIONS = new ResourceMappings('battingSessions');
+	public static PITCHING_SESSIONS = new ResourceMappings('pitchingSessions');
+	public static COMPETITION_LEVELS = new ResourceMappings('competitionLevels');
+	public static BILLING = new ResourceMappings('billing');
+	public static BILLING_CARDS = new ResourceMappings(`${ResourceMappings.BILLING}/cards`);
 
 	private readonly path: string;
 
