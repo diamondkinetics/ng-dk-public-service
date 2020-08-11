@@ -28,3 +28,5 @@ export * from './lib/service/http/v3/pitching-session/pitching-session.service.v
 /////////////////////////////////////////////////////////////////////////////////////
 export * from './lib/service/http/v2/competition-level/competition-level.module.v2';
 export * from './lib/service/http/v2/competition-level/competition-level.service.v2';
+export * from './lib/service/http/v2/billing/billing-card.module.v2';
+export * from './lib/service/http/v2/billing/billing-card.service.v2';
