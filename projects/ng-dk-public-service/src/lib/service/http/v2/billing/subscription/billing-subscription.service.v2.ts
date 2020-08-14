@@ -15,11 +15,11 @@ export class BillingSubscriptionServiceV2 {
 		return this.http.get<CouponDetailsResponseDTOV2>(`/v2/${route.BILLING_COUPONS}/${couponId}`);
 	}
 
-	public applyCoupon(couponRequest: CouponRequestDTOV2, dkSubscription: DKSubscription): void {
+	public applyCoupon(couponRequest: CouponRequestDTOV2, dkSubscription?: DKSubscription): void {
 		this.http.post(
 			`/v2/${route.BILLING_COUPONS}`,
 			couponRequest,
-			{ params: { dkSubscription: dkSubscription.getName }});
+			dkSubscription ? { params: { dkSubscription: dkSubscription.getName }} : null);
 	}
 
 }
