@@ -15,8 +15,8 @@ export class BillingSubscriptionServiceV2 {
 		return this.http.get<CouponDetailsResponseDTOV2>(`/v2/${route.BILLING_COUPONS}/${couponId}`);
 	}
 
-	public applyCoupon(couponRequest: CouponRequestDTOV2, dkSubscription?: DKSubscription): void {
-		this.http.post(
+	public applyCoupon(couponRequest: CouponRequestDTOV2, dkSubscription?: DKSubscription): Observable<void> {
+		return this.http.post<void>(
 			`/v2/${route.BILLING_COUPONS}`,
 			couponRequest,
 			dkSubscription ? { params: { dkSubscription: dkSubscription.getName }} : null);
