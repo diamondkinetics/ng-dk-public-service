@@ -11,9 +11,8 @@ export class AuthService {
 
 	/**
 	 * Authenticates a user with the provided information and when successful, the API returns a response containing
-	 * an X-AUTH-TOKEN header. This token is to be used to make any subsequent requests that require authorization.
-	 * Note that we only care about the X-AUTH-TOKEN header value in this response because the body only contains the
-	 * uuid of the authenticated user.
+	 * an X-AUTH-TOKEN header. This token is to be used to make any subsequent requests that require authorization,
+	 * which can be implemented with something like a request interceptor.
 	 *
 	 * @param   emailOrNickname The email or nickname to authenticate the user with.
 	 * @param   password        The password to authenticate the user with.
