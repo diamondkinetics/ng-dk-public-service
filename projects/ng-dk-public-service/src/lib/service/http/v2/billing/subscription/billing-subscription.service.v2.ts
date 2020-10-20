@@ -16,10 +16,13 @@ export class BillingSubscriptionServiceV2 {
 	}
 
 	public applyCoupon(couponRequest: CouponRequestDTOV2, dkSubscription?: DKSubscription): Observable<void> {
-		return this.http.post<void>(
-			`/v2/${route.BILLING_COUPONS}`,
-			couponRequest,
-			dkSubscription ? { params: { dkSubscription: dkSubscription.getName }} : null);
+		const params = {};
+
+		if (dkSubscription) {
+			params['dkSubscription'] = dkSubscription.getName;
+		}
+
+		return this.http.post<void>(`/v2/${route.BILLING_COUPONS}`, couponRequest, params);
 	}
 
 }
