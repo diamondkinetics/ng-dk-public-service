@@ -32,3 +32,5 @@ export * from './lib/service/http/v2/billing/card/billing-card.module.v2';
 export * from './lib/service/http/v2/billing/card/billing-card.service.v2';
 export * from './lib/service/http/v2/billing/subscription/billing-subscription.module.v2';
 export * from './lib/service/http/v2/billing/subscription/billing-subscription.service.v2';
+export * from './lib/service/http/v2/user-bat/user-bat.module.v2';
+export * from './lib/service/http/v2/user-bat/user-bat.service.v2';
