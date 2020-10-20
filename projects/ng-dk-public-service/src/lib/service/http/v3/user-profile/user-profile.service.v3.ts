@@ -2,7 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { UserProfileDTOV3, RegisterWithProfileRequestDTOV3 } from '@diamondkinetics/dk-public-dto-ts';
+import {
+	UserProfileDTOV3,
+	RegisterWithProfileRequestDTOV3,
+	ResetPasswordRequestDTO,
+	LoggedInUserDTO
+} from '@diamondkinetics/dk-public-dto-ts';
 import { AbstractResourceService } from './../../abstract-resource.service';
 import { ResourceMappings as route } from './../../../../enum/resource-mappings.enum';
 
@@ -65,6 +70,16 @@ export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTO
 		formData.append('file', file, fileName);
 
 		return this.http.post<UserProfileDTOV3>(`/${this.getVersionString()}/${route.USER_PROFILE_IMAGE}`, formData);
+	}
+
+	/**
+	 * Resets the password of a user.
+	 * 
+	 * @param   request The reset password request data.
+	 * @returns         An observable containing a LoggedInUserDTO.
+	 */
+	public resetPassword(request: ResetPasswordRequestDTO): Observable<LoggedInUserDTO> {
+		return this.http.post<LoggedInUserDTO>(`/${this.getVersionString()}/api/user/resetPassword`, request);
 	}
 
 }
