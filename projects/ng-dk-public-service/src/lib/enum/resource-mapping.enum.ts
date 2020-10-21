@@ -11,6 +11,7 @@ export class ResourceMapping {
 	public static BILLING_CARDS = new ResourceMapping(`${ResourceMapping.BILLING}/cards`);
 	public static BILLING_COUPONS = new ResourceMapping(`${ResourceMapping.BILLING}/coupons`);
 	public static USER_BATS = new ResourceMapping('userBats');
+	public static BAT_MODELS = new ResourceMapping('batModels');
 
 	private readonly path: string;
 
