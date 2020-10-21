@@ -9,7 +9,7 @@ import {
 	LoggedInUserDTO
 } from '@diamondkinetics/dk-public-dto-ts';
 import { AbstractResourceService } from './../../abstract-resource.service';
-import { ResourceMappings as route } from './../../../../enum/resource-mappings.enum';
+import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum';
 
 @Injectable({ providedIn: 'root' })
 export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTOV3> {

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserBatDTOV2 } from '@diamondkinetics/dk-public-dto-ts';
 
 import { AbstractResourceService } from '../../abstract-resource.service';
-import { ResourceMappings as route } from '../../../../enum/resource-mappings.enum';
+import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum';
 
 @Injectable({ providedIn: 'root' })
 export class UserBatServiceV2 extends AbstractResourceService<UserBatDTOV2> {

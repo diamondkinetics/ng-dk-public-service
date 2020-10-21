@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 //                                  No version
 /////////////////////////////////////////////////////////////////////////////////////
-export * from './lib/enum/resource-mappings.enum';
+export * from './lib/enum/resource-mapping.enum';
 export * from './lib/service/service.module';
 export * from './lib/service/http/auth/auth.module';
 export * from './lib/service/http/auth/auth.service';

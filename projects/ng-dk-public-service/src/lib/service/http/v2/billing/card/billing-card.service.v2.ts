@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { CardCreationDTOV2, CardResultDTOV2, DeletedCardDTOV2 } from '@diamondkinetics/dk-public-dto-ts';
 
-import { ResourceMappings as route } from '../../../../../enum/resource-mappings.enum';
+import { ResourceMapping as route } from '../../../../../enum/resource-mapping.enum';
 
 @Injectable({ providedIn: 'root' })
 export class BillingCardServiceV2 {
