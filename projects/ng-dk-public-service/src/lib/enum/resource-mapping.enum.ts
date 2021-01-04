@@ -10,6 +10,7 @@ export class ResourceMapping {
 	public static BILLING = new ResourceMapping('billing');
 	public static BILLING_CARDS = new ResourceMapping(`${ResourceMapping.BILLING}/cards`);
 	public static BILLING_COUPONS = new ResourceMapping(`${ResourceMapping.BILLING}/coupons`);
+	public static BILLING_TRIAL = new ResourceMapping(`${ResourceMapping.BILLING}/trial`);
 	public static USER_BATS = new ResourceMapping('userBats');
 	public static BAT_MODELS = new ResourceMapping('batModels');
 	public static OAUTH = new ResourceMapping('oauth');
