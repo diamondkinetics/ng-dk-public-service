@@ -12,6 +12,9 @@ export class ResourceMapping {
 	public static BILLING_COUPONS = new ResourceMapping(`${ResourceMapping.BILLING}/coupons`);
 	public static USER_BATS = new ResourceMapping('userBats');
 	public static BAT_MODELS = new ResourceMapping('batModels');
+	public static OAUTH = new ResourceMapping('oauth');
+	public static OAUTH_CLIENTS = new ResourceMapping(`${ResourceMapping.OAUTH}/clients`);
+	public static OAUTH_AUTHORIZE = new ResourceMapping(`${ResourceMapping.OAUTH}/authorize`);
 
 	private readonly path: string;
 
