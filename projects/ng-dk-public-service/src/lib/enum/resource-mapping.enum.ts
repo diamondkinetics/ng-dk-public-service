@@ -15,6 +15,7 @@ export class ResourceMapping {
 	public static OAUTH = new ResourceMapping('oauth');
 	public static OAUTH_CLIENTS = new ResourceMapping(`${ResourceMapping.OAUTH}/clients`);
 	public static OAUTH_AUTHORIZE = new ResourceMapping(`${ResourceMapping.OAUTH}/authorize`);
+	public static WEB_HOOKS = new ResourceMapping('webHooks');
 
 	private readonly path: string;
 

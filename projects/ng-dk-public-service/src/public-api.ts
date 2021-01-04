@@ -38,3 +38,5 @@ export * from './lib/service/http/v2/bat-model/bat-model.module.v2';
 export * from './lib/service/http/v2/bat-model/bat-model.service.v2';
 export * from './lib/service/http/v2/oauth/oauth.module.v2';
 export * from './lib/service/http/v2/oauth/oauth.service.v2';
+export * from './lib/service/http/v2/web-hook/web-hook.module.v2';
+export * from './lib/service/http/v2/web-hook/web-hook.service.v2';
