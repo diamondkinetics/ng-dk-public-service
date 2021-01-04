@@ -29,7 +29,7 @@ export abstract class AbstractResourceService<T extends AbstractSyncableDTOV2|Ab
 	}
 
 	public list(params?: {}): Observable<Array<T>> {
-		return this.http.get<Array<T>>(`/${this.getVersionString()}/${this.endpoint}`, { params });
+		return this.http.get<T[]>(`/${this.getVersionString()}/${this.endpoint}`, { params });
 	}
 
 	public getVersionString(): string {
