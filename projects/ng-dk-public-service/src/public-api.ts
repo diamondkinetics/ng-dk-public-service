@@ -22,6 +22,8 @@ export * from './lib/service/http/v3/batting-session/batting-session.module.v3';
 export * from './lib/service/http/v3/batting-session/batting-session.service.v3';
 export * from './lib/service/http/v3/pitching-session/pitching-session.module.v3';
 export * from './lib/service/http/v3/pitching-session/pitching-session.service.v3';
+export * from './lib/service/http/v3/population-data/population-data.module.v3';
+export * from './lib/service/http/v3/population-data/population-data.service.v3';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V2
