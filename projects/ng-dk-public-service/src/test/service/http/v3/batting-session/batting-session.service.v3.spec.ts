@@ -4,11 +4,11 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import { BattingSessionDTOV3 } from '@diamondkinetics/dk-public-dto-ts';
 
-import { mockBattingSessionDTOV3 } from '@test/mock/dto/v3/batting-session.mock.dto.v3';
-import { RequestInterceptor } from '@test/util/request-interceptor/request.interceptor';
-import { environment } from '@test/environments/environment';
-import { ResourceMappings as route } from '@lib/enum/resource-mappings.enum';
-import { BattingSessionServiceV3 } from '@lib/service/http/v3/batting-session/batting-session.service.v3';
+import { mockBattingSessionDTOV3 } from '~test/mock/dto/v3/batting-session.mock.dto.v3';
+import { RequestInterceptor } from '~test/util/request-interceptor/request.interceptor';
+import { environment } from '~test/environments/environment';
+import { ResourceMapping as route } from '~lib/enum/resource-mapping.enum';
+import { BattingSessionServiceV3 } from '~lib/service/http/v3/batting-session/batting-session.service.v3';
 
 
 describe('BattingSessionServiceV3', () => {

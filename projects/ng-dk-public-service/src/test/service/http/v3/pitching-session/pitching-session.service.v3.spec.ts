@@ -4,11 +4,11 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import { PitchingSessionDTOV3 } from '@diamondkinetics/dk-public-dto-ts';
 
-import { mockPitchingSessionDTOV3 } from '@test/mock/dto/v3/pitching-session.mock.dto.v3';
-import { RequestInterceptor } from '@test/util/request-interceptor/request.interceptor';
-import { environment } from '@test/environments/environment';
-import { ResourceMappings as route } from '@lib/enum/resource-mappings.enum';
-import { PitchingSessionServiceV3 } from '@lib/service/http/v3/pitching-session/pitching-session.service.v3';
+import { mockPitchingSessionDTOV3 } from '~test/mock/dto/v3/pitching-session.mock.dto.v3';
+import { RequestInterceptor } from '~test/util/request-interceptor/request.interceptor';
+import { environment } from '~test/environments/environment';
+import { ResourceMapping as route } from '~lib/enum/resource-mapping.enum';
+import { PitchingSessionServiceV3 } from '~lib/service/http/v3/pitching-session/pitching-session.service.v3';
 
 describe('PitchingSessionServiceV3', () => {
 
@@ -28,8 +28,8 @@ describe('PitchingSessionServiceV3', () => {
 			imports: [HttpClientTestingModule]
 		});
 
-		httpTestingController = TestBed.get(HttpTestingController);
-		service = TestBed.get(PitchingSessionServiceV3);
+		httpTestingController = TestBed.inject(HttpTestingController);
+		service = TestBed.inject(PitchingSessionServiceV3);
 	});
 
 	afterEach(() => {
@@ -181,7 +181,7 @@ describe('PitchingSessionServiceV3', () => {
 				});
 
 			const req = httpTestingController.expectOne(
-				`${environment.apiUrl}/${this.getVersionString()}/${route.USERS}/${userUuid}/${route.PITCHING_SESSIONS}`
+				`${environment.apiUrl}/${service.getVersionString()}/${route.USERS}/${userUuid}/${route.PITCHING_SESSIONS}`
 			);
 			expect(req.request.method).toEqual('POST');
 			req.flush(mockPitchingSessionDTOV3);

@@ -28,7 +28,7 @@ export abstract class AbstractResourceService<T extends AbstractSyncableDTOV2|Ab
 		return this.http.delete<T>(`/${this.getVersionString()}/${this.endpoint}/${uuid}`, { params });
 	}
 
-	public list(params?: {}): Observable<Array<T>> {
+	public list(params?: {}): Observable<T[]> {
 		return this.http.get<T[]>(`/${this.getVersionString()}/${this.endpoint}`, { params });
 	}
 

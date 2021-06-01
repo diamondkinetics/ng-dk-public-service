@@ -43,7 +43,7 @@ export const mockUserProfileDTOV2: UserProfileDTOV2 = {
 	pitchingSubscribed: false,
 	pitchingSubscribedTo: null,
 	pitchingTrialing: false,
-	playType: PlayType.BASEBALL,
+	playType: PlayType.BASEBALL.getName,
 	position: 'P',
 	preferences: '{"Baseball": {"promptedToSetPitchTypes": true, "pitchTypes" : ["76f15025-4ce1-421f-a9c6-a117bdc1ac33",' +
 		'"6c911bf8-3119-49fc-beff-108a1f00773c","42748a9e-ccc8-4df5-9235-3112865a4f0c",' +

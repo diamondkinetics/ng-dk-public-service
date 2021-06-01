@@ -2,13 +2,16 @@ import { HTTP_INTERCEPTORS, HttpResponse, HttpHeaders } from '@angular/common/ht
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import { RegisterWithProfileRequestDTOV2, UserProfileDTOV2 } from '@diamondkinetics/dk-public-dto-ts';
+import {
+	RegisterWithProfileRequestDTOV2,
+	UserProfileDTOV2,
+	mockUserProfileDTOV2,
+	mockRegisterWithProfileRequestDTOV2
+} from '@diamondkinetics/dk-public-dto-ts';
 
-import { mockUserProfileDTOV2 } from '@test/mock/dto/v2/user-profile.mock.dto.v2';
-import { mockRegisterWithProfileRequestDTOV2 } from '@test/mock/dto/v2/register-with-profile-request.mock.dto.v2';
-import { RequestInterceptor } from '@test/util/request-interceptor/request.interceptor';
-import { environment } from '@test/environments/environment';
-import { AuthService } from '@lib/service/http/auth/auth.service';
+import { RequestInterceptor } from '~test/util/request-interceptor/request.interceptor';
+import { environment } from '~test/environments/environment';
+import { AuthService } from '~lib/service/http/auth/auth.service';
 
 
 describe('AuthService', () => {
@@ -30,10 +33,10 @@ describe('AuthService', () => {
 			imports: [HttpClientTestingModule]
 		});
 
-		httpTestingController = TestBed.get(HttpTestingController);
-		service = TestBed.get(AuthService);
-		mockRegisterRequest = mockRegisterWithProfileRequestDTOV2;
-		mockProfile = mockUserProfileDTOV2;
+		httpTestingController = TestBed.inject(HttpTestingController);
+		service = TestBed.inject(AuthService);
+		mockRegisterRequest = mockRegisterWithProfileRequestDTOV2();
+		mockProfile = mockUserProfileDTOV2();
 	});
 
 	afterEach(() => {
@@ -42,18 +45,6 @@ describe('AuthService', () => {
 
 	it('Should be created', () => {
 		expect(service).toBeTruthy();
-	});
-
-	describe('register()', () => {
-		it('Should POST the correct RegisterWithProfileRequest', () => {
-			service.register(mockRegisterRequest).subscribe((userProfile: UserProfileDTOV2) => {
-				expect(userProfile).toEqual(mockProfile);
-			});
-
-			const req = httpTestingController.expectOne(`${environment.apiUrl}/v2/users`);
-			expect(req.request.method).toEqual('POST');
-			req.flush(mockProfile);
-		});
 	});
 
 	describe('login()', () => {
