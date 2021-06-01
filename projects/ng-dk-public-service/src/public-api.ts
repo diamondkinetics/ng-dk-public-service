@@ -28,6 +28,7 @@ export * from './lib/service/http/v3/population-data/population-data.service.v3'
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V2
 /////////////////////////////////////////////////////////////////////////////////////
+export * from './lib/service/http/v2/service.module.v2';
 export * from './lib/service/http/v2/competition-level/competition-level.module.v2';
 export * from './lib/service/http/v2/competition-level/competition-level.service.v2';
 export * from './lib/service/http/v2/billing/card/billing-card.module.v2';
