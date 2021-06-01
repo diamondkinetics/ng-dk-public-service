@@ -62,7 +62,6 @@
             "main": "projects/ng-dk-public-service-showcase/src/main.ts",
             "polyfills": "projects/ng-dk-public-service-showcase/src/polyfills.ts",
             "tsConfig": "projects/ng-dk-public-service-showcase/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/ng-dk-public-service-showcase/src/favicon.ico",
               "projects/ng-dk-public-service-showcase/src/assets"
@@ -70,7 +69,13 @@
             "styles": [
               "projects/ng-dk-public-service-showcase/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -109,11 +114,9 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": false,
               "budgets": [
                 {
                   "type": "initial",

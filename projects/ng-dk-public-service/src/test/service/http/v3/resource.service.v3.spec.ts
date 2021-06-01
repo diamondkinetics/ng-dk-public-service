@@ -10,7 +10,23 @@ import { environment } from '~test/environments/environment';
 
 export abstract class ResourceServiceV3Suite<T extends AbstractSyncableDTO, S extends AbstractResourceService<T>> {
 
-	constructor(private suiteName: string, private resourceRoute: string, private serviceProvider: S) {}
+	constructor(
+		private readonly suiteName: string,
+		private readonly resourceRoute: string,
+		private readonly serviceProvider: S
+	) {}
+
+	protected getSuiteName(): string {
+		return this.suiteName;
+	}
+
+	protected getResourceRoute(): string {
+		return this.resourceRoute;
+	}
+
+	protected getServiceProvider(): S {
+		return this.serviceProvider;
+	}
 
 	protected run(): void {
 		describe(this.suiteName, () => {
