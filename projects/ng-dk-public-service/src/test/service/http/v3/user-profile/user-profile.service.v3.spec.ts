@@ -1,35 +1,29 @@
-import { HTTP_INTERCEPTORS, HttpResponse, HttpHeaders } from '@angular/common/http';
-import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-
-import {
-	UserProfileDTOV3,
-	RegisterWithProfileRequestDTOV3,
-	ResetPasswordRequestDTO,
-	LoggedInUserDTO
-} from '@diamondkinetics/dk-public-dto-ts';
-
-import { RequestInterceptor } from '~test/util/request-interceptor/request.interceptor';
-import { environment } from '~test/environments/environment';
-import { UserProfileServiceV3 } from '~lib/service/http/v3/user-profile/user-profile.service.v3';
 import { Provider } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
+import { UserProfileDTOV3, mockUserProfileDTOV3 } from '@diamondkinetics/dk-public-dto-ts';
 
-describe('UserProfileServiceV3', () => {
-	let httpTestingController: HttpTestingController;
-	let service: UserProfileServiceV3;
+import { UserProfileServiceV3 } from '~lib/service/http/v3/user-profile/user-profile.service.v3';
+import { ResourceServiceTestSuite } from '~test/service/http/resource.service.test-suite.spec';
+import { ResourceMapping as route } from '~lib/enum/resource-mapping.enum';
 
-	const requestInterceptorProvider: Provider = {
-		provide: HTTP_INTERCEPTORS,
-		useClass: RequestInterceptor,
-		multi: true
-	};
-	
-	beforeEach(() => {
-		TestBed.configureTestingModule({
-			providers: [
-				UserProfileServiceV3,
-				requestInterceptorProvider
-			]
-		});
-	});
-});
+class UserProfileServiceV3TestSuite extends ResourceServiceTestSuite<UserProfileDTOV3, UserProfileServiceV3> {
+
+	constructor() {
+		super('UserProfileServiceV3', route.USER_PROFILE.getPath, 'UserProfileDTOV3', mockUserProfileDTOV3())
+	}
+
+	protected getInjectedService(): UserProfileServiceV3 {
+		return TestBed.inject(UserProfileServiceV3);
+	}
+
+	protected getProviders(): Provider[] {
+		return [
+			this.getRequestInterceptorProvider(),
+			UserProfileServiceV3
+		];
+	}
+
+}
+
+const testSuite: UserProfileServiceV3TestSuite = new UserProfileServiceV3TestSuite();
+testSuite.run();

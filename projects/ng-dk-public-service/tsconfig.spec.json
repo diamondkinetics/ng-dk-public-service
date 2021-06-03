@@ -12,6 +12,7 @@
   ],
   "include": [
     "**/*.spec.ts",
-    "**/*.d.ts"
+    "**/*.d.ts",
+    "src/test/service/http/resource.service.test-suite.ts"
   ]
 }

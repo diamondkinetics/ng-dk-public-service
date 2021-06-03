@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
 import {
 	UserProfileDTOV3,
 	RegisterWithProfileRequestDTOV3,
 	ResetPasswordRequestDTO,
 	LoggedInUserDTO
 } from '@diamondkinetics/dk-public-dto-ts';
+import { Observable } from 'rxjs';
+
 import { AbstractResourceService } from './../../abstract-resource.service';
 import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum';
 
@@ -15,7 +15,7 @@ import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum
 export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTOV3> {
 
 	constructor(protected http: HttpClient) {
-		super(http, 3, route.USERS.getPath);
+		super(http, 3, route.USER_PROFILE.getPath);
 	}
 
 	/**

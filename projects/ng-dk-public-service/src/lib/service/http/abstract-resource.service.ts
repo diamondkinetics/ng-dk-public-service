@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { AbstractSyncableDTOV3 } from '@diamondkinetics/dk-public-dto-ts';
-import { AbstractSyncableDTOV2 } from '@diamondkinetics/dk-public-dto-ts';
+import { AbstractSyncableDTOV2, AbstractSyncableDTOV3, AbstractSyncableDTOV4 } from '@diamondkinetics/dk-public-dto-ts';
 
-export abstract class AbstractResourceService<T extends AbstractSyncableDTOV2|AbstractSyncableDTOV3> {
+export abstract class AbstractResourceService<
+	T extends AbstractSyncableDTOV2|AbstractSyncableDTOV3|AbstractSyncableDTOV4>
+{
 
 	constructor(protected http: HttpClient, protected version: number, protected endpoint: string) {}
 

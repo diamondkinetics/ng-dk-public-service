@@ -13,6 +13,15 @@ export * from './lib/service/http/abstract-resource.service';
 export * from './lib/service/http/abstract-sensor-session.service';
 
 /////////////////////////////////////////////////////////////////////////////////////
+//                                      V4
+/////////////////////////////////////////////////////////////////////////////////////
+export * from './lib/service/http/v4/service.module.v4';
+export * from './lib/service/http/v4/group/group.module.v4';
+export * from './lib/service/http/v4/group/group.service.v4';
+export * from './lib/service/http/v4/group-membership/group-membership.module.v4';
+export * from './lib/service/http/v4/group-membership/group-membership.service.v4';
+
+/////////////////////////////////////////////////////////////////////////////////////
 //                                      V3
 /////////////////////////////////////////////////////////////////////////////////////
 export * from './lib/service/http/v3/service.module.v3';
