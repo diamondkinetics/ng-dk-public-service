@@ -21,4 +21,10 @@ export class GroupServiceV4 extends AbstractResourceService<GroupDTOV4> {
 		return this.http.post<GroupDTOV4>(`/${this.getVersionString()}/${route.GROUPS}/${groupUuid}/groupImage`, formData);
 	}
 
+	public searchGroups(q: string): Observable<GroupSummaryDTOV4[]> {
+		const params = { q };
+
+		return this.http.get<GroupSummaryDTOV4[]>(`/${this.getVersionString()}/${route.GROUPS_SEARCH}`, { params });
+	}
+
 }

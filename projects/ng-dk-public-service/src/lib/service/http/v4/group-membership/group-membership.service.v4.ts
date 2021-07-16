@@ -19,7 +19,7 @@ export class GroupMembershipServiceV4 extends AbstractResourceService<GroupMembe
 
 	public updateRole(role: RoleDTOV2, groupUuid: string, memberUuid: string): Observable<GroupMembershipDTOV4> {
 		return this.http.post<GroupMembershipDTOV4>(
-			`/${this.getVersionString()}/${route.GROUPS.getPath}/${groupUuid}/${memberUuid}/role`,
+			`/${this.getVersionString()}/${route.GROUPS.getPath}/${groupUuid}/membership/${memberUuid}/role`,
 			role);
 	}
 

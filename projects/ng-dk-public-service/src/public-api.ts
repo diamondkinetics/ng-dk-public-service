@@ -52,3 +52,5 @@ export * from './lib/service/http/v2/oauth/oauth.module.v2';
 export * from './lib/service/http/v2/oauth/oauth.service.v2';
 export * from './lib/service/http/v2/web-hook/web-hook.module.v2';
 export * from './lib/service/http/v2/web-hook/web-hook.service.v2';
+export * from './lib/service/http/v2/leaderboard/leaderboard.module.v2';
+export * from './lib/service/http/v2/leaderboard/leaderboard.service.v2';

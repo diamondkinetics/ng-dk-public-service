@@ -8,6 +8,7 @@ import { UserBatModuleV2 } from './user-bat/user-bat.module.v2';
 import { BatModelModuleV2 } from './bat-model/bat-model.module.v2';
 import { OAuthModuleV2 } from './oauth/oauth.module.v2';
 import { WebHookModuleV2 } from './web-hook/web-hook.module.v2';
+import { LeaderboardModuleV2 } from './leaderboard/leaderboard.module.v2';
 
 @NgModule({
 	imports: [
@@ -20,7 +21,8 @@ import { WebHookModuleV2 } from './web-hook/web-hook.module.v2';
 		UserBatModuleV2,
 		BatModelModuleV2,
 		OAuthModuleV2,
-		WebHookModuleV2
+		WebHookModuleV2,
+		LeaderboardModuleV2
 	]
 })
 export class ServiceModuleV2 {
