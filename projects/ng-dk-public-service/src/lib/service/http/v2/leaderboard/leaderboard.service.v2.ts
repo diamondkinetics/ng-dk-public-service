@@ -19,7 +19,8 @@ export class LeaderboardServiceV2 extends AbstractResourceService<LeaderboardDTO
 	}
 
 	public getResults(uuid: string): Observable<LeaderboardResultDTOV2> {
-		return this.http.get<LeaderboardResultDTOV2>(`/${this.getVersionString()}/${uuid}/results`);
+		return this.http.get<LeaderboardResultDTOV2>(
+			`/${this.getVersionString()}/${route.LEADERBOARDS}/${uuid}/results`);
 	}
 
 	public getResultsForUser(userUuid: string): Observable<LeaderboardResultDTOV2> {
