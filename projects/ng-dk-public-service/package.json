@@ -1,12 +1,12 @@
 {
   "name": "@diamondkinetics/ng-dk-public-service",
   "description": "An Angular library with services for integrating with the Diamond Kinetics public API.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": "https://github.com/diamondkinetics/ng-dk-public-service",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "~12.0.2",
-    "@angular/core": "~12.0.2"
+    "@angular/common": "~12.1.3",
+    "@angular/core": "~12.1.3"
   },
   "dependencies": {
     "tslib": "^2.0.0"
