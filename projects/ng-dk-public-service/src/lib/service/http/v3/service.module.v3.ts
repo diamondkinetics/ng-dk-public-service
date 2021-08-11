@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { BattingSessionModuleV3 } from './batting-session/batting-session.module.v3';
 import { PitchingSessionModuleV3 } from './pitching-session/pitching-session.module.v3';
 import { UserProfileModuleV3 } from './user-profile/user-profile.module.v3';
+import { ExportRequestModuleV3 } from './export-request/export-request.module.v3';
 
 @NgModule({
 	imports: [CommonModule],
 	exports: [
 		UserProfileModuleV3,
 		BattingSessionModuleV3,
-		PitchingSessionModuleV3
+		PitchingSessionModuleV3,
+		ExportRequestModuleV3
 	]
 })
 export class ServiceModuleV3 {

@@ -33,6 +33,8 @@ export * from './lib/service/http/v3/pitching-session/pitching-session.module.v3
 export * from './lib/service/http/v3/pitching-session/pitching-session.service.v3';
 export * from './lib/service/http/v3/population-data/population-data.module.v3';
 export * from './lib/service/http/v3/population-data/population-data.service.v3';
+export * from './lib/service/http/v3/export-request/export-request.module.v3';
+export * from './lib/service/http/v3/export-request/export-request.service.v3';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V2

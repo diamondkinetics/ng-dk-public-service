@@ -21,6 +21,7 @@ export class ResourceMapping {
 	public static WEB_HOOKS = new ResourceMapping('webHooks');
 	public static POPULATION_DATA = new ResourceMapping('swingPopulationData');
 	public static LEADERBOARDS = new ResourceMapping('leaderboards');
+	public static EXPORT_REQUESTS = new ResourceMapping('exportRequests');
 
 	private readonly path: string;
 
