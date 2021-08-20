@@ -82,4 +82,14 @@ export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTO
 		return this.http.post<LoggedInUserDTO>(`/${this.getVersionString()}/api/user/resetPassword`, request);
 	}
 
+	/**
+	 * Searches for users by name and email
+	 * 
+	 * @param   q The search query string.
+	 * @returns   An observable containing a user results array.
+	 */
+	public findUsers(q: string): Observable<UserProfileDTOV3[]> {
+		return this.http.get<UserProfileDTOV3[]>(`/${this.getVersionString()}/users/profile`, { params: { q }});
+	}
+
 }
