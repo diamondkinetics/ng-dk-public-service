@@ -15,7 +15,7 @@ phases:
       - apt install ./google-chrome*.deb -y
   pre_build:
     commands:
-      - ng t ng-dk-public-service --watch=false --browsers=ChromeHeadless --no-sandbox
+      - ng t ng-dk-public-service --watch=false --browsers=ChromeHeadlessCI
   build:
     commands:
       - npm run-script build
