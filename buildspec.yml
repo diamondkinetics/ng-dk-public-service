@@ -5,11 +5,15 @@ phases:
     commands:
       - echo Installing package.json dependencies...
       - npm install
-      - echo installing Angular CLI...
+      - echo Installing Angular CLI...
       - npm install -g @angular/cli@12.1.3
+      - echo Installing headless Chrome for testing.
+      - apt-get install curl wget libxss1 libappindicator1 libindicator7 -y
+      - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      - apt install ./google-chrome*.deb -y
   pre_build:
     commands:
-      - ng t ng-dk-public-service
+      - ng t ng-dk-public-service --watch=false --browsers=ChromeHeadless
   build:
     commands:
       - npm run-script build
