@@ -21,7 +21,7 @@ phases:
       - npm run-script build
   post_build:
     commands:
-      - CURRENT_VERSION=$(npm show -q @diamondkinetics/dk-ng-dk-public-service version)
+      - CURRENT_VERSION=$(npm show -q @diamondkinetics/ng-dk-public-service version)
       - SRC_VERSION=$(node -pe "require('./package.json').version")
       - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - if [ "$CURRENT_VERSION" != "$SRC_VERSION" ]; then npm publish --access=public; fi
