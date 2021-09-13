@@ -18,7 +18,7 @@ phases:
       - ng t ng-dk-public-service --watch=false --browsers=ChromeHeadlessCI
   build:
     commands:
-      - npm run-script build
+      - ng b ng-dk-public-service -c production
   post_build:
     commands:
       - CURRENT_VERSION=$(npm show -q @diamondkinetics/ng-dk-public-service version)
