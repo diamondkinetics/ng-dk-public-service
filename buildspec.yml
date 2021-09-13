@@ -28,4 +28,4 @@ phases:
       - if [ "$CURRENT_VERSION" = "$SRC_VERSION "]; then echo "No new version to publish (Currently $CURRENT_VERSION)."; fi
 artifacts:
   files:
-    - build/**/*
+    - dist/**/*
