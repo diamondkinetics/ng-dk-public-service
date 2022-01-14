@@ -2,8 +2,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Provider } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-
 import { AbstractSyncableDTO } from '@diamondkinetics/dk-public-dto-ts';
+
 import { AbstractResourceService } from '~lib/service/http/abstract-resource.service';
 import { RequestInterceptor } from '~test/util/request-interceptor/request.interceptor';
 import { environment } from '~test/environments/environment';
@@ -11,82 +11,80 @@ import { environment } from '~test/environments/environment';
 export abstract class ResourceServiceTestSuite<T extends AbstractSyncableDTO, S extends AbstractResourceService<T>> {
 
 	protected service: S;
+	protected providers: Provider[] = [];
 	private httpTestingController: HttpTestingController;
 
 	constructor(
-		private readonly suiteName: string,
 		private readonly resourceRoute: string,
 		private readonly resourceClass: string,
 		protected mockResource: T
-	) {}
+	) {
+		this.providers.push(this.getRequestInterceptorProvider());
+	}
 
-	public run(): void {
-		describe(this.suiteName, () => {
+	public run(): void {		
+		const dtoMatcher = (result: T) => expect(this.mockResource).toEqual(result);
+		const uuidMatcher = (uuid: string) => expect(this.mockResource.uuid).toEqual(uuid);
+		const dtoDeletedMatcher = (dto: T) => expect(dto.deleted).toEqual(true);
+		const listMatcher = (dtoList: T[]) => expect([this.mockResource, this.mockResource, this.mockResource])
+			.toEqual(dtoList);
+		const postMatcher = (method: string) => expect(method).toEqual('POST');
+		const getMatcher = (method: string) => expect(method).toEqual('GET');
+		const putMatcher = (method: string) => expect(method).toEqual('PUT');
+		const deleteMatcher = (method: string) => expect(method).toEqual('DELETE');
 		
-			const dtoMatcher = (result: T) => expect(this.mockResource).toEqual(result);
-			const uuidMatcher = (uuid: string) => expect(this.mockResource.uuid).toEqual(uuid);
-			const dtoDeletedMatcher = (dto: T) => expect(dto.deleted).toEqual(true);
-			const listMatcher = (dtoList: T[]) => expect([this.mockResource, this.mockResource, this.mockResource])
-				.toEqual(dtoList);
-			const postMatcher = (method: string) => expect(method).toEqual('POST');
-			const getMatcher = (method: string) => expect(method).toEqual('GET');
-			const putMatcher = (method: string) => expect(method).toEqual('PUT');
-			const deleteMatcher = (method: string) => expect(method).toEqual('DELETE');
-			
-			beforeEach(() => {
-				TestBed.configureTestingModule({
-					providers: this.getProviders(),
-					imports: [HttpClientTestingModule]
-				});
-		
-				this.httpTestingController = TestBed.inject(HttpTestingController);
-				this.service = this.getInjectedService();
+		beforeEach(() => {
+			TestBed.configureTestingModule({
+				providers: this.providers,
+				imports: [HttpClientTestingModule]
 			});
-		
-			afterEach(() => {
-				this.httpTestingController.verify();
+	
+			this.httpTestingController = TestBed.inject(HttpTestingController);
+			this.service = this.getInjectedService();
+		});
+	
+		afterEach(() => {
+			this.httpTestingController.verify();
+		});
+	
+		it('Should be created', () => {
+			expect(this.getInjectedService()).toBeTruthy();
+		});
+	
+		describe('create()', () => {
+			it(`Should POST the correct ${this.resourceClass}`, () => {
+				this.testCreate(dtoMatcher, postMatcher);
 			});
-		
-			it('Should be created', () => {
-				expect(this.getInjectedService()).toBeTruthy();
+		});
+	
+		describe('readForActingUser()', () => {
+			it(`Should GET the correct ${this.resourceClass}`, () => {
+				this.testReadForActingUser(dtoMatcher, getMatcher);
 			});
-		
-			describe('create()', () => {
-				it(`Should POST the correct ${this.resourceClass}`, () => {
-					this.testCreate(dtoMatcher, postMatcher);
-				});
+		});
+	
+		describe('read()', () => {
+			it(`Should GET the correct ${this.resourceClass}`, () => {
+				this.testRead(uuidMatcher, getMatcher);
 			});
-		
-			describe('readForActingUser()', () => {
-				it(`Should GET the correct ${this.resourceClass}`, () => {
-					this.testReadForActingUser(dtoMatcher, getMatcher);
-				});
+		});
+	
+		describe('update()', () => {
+			it(`Should PUT the correct ${this.resourceClass}`, () => {
+				this.testUpdate(dtoMatcher, putMatcher);
 			});
-		
-			describe('read()', () => {
-				it(`Should GET the correct ${this.resourceClass}`, () => {
-					this.testRead(uuidMatcher, getMatcher);
-				});
+		});
+	
+		describe('delete()', () => {
+			it(`Should DELETE the correct ${this.resourceClass}`, () => {
+				this.testDelete(dtoDeletedMatcher, deleteMatcher);
 			});
-		
-			describe('update()', () => {
-				it(`Should PUT the correct ${this.resourceClass}`, () => {
-					this.testUpdate(dtoMatcher, putMatcher);
-				});
+		});
+	
+		describe('list()', () => {
+			it(`Should GET the correct ${this.resourceClass} collection`, () => {
+				this.testList(listMatcher, getMatcher);
 			});
-		
-			describe('delete()', () => {
-				it(`Should DELETE the correct ${this.resourceClass}`, () => {
-					this.testDelete(dtoDeletedMatcher, deleteMatcher);
-				});
-			});
-		
-			describe('list()', () => {
-				it(`Should GET the correct ${this.resourceClass} collection`, () => {
-					this.testList(listMatcher, getMatcher);
-				});
-			});
-		
 		});
 	}
 
@@ -173,7 +171,7 @@ export abstract class ResourceServiceTestSuite<T extends AbstractSyncableDTO, S 
 		req.flush(dtoList);
 	}
 
-	protected getRequestInterceptorProvider(): Provider {
+	private getRequestInterceptorProvider(): Provider {
 		return {
 			provide: HTTP_INTERCEPTORS,
 			useClass: RequestInterceptor,
@@ -182,6 +180,5 @@ export abstract class ResourceServiceTestSuite<T extends AbstractSyncableDTO, S 
 	}
 
 	protected abstract getInjectedService(): S;
-	protected abstract getProviders(): Provider[];
 
 }

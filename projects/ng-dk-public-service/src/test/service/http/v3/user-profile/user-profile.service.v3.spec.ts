@@ -1,4 +1,3 @@
-import { Provider } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { UserProfileDTOV3, mockUserProfileDTOV3 } from '@diamondkinetics/dk-public-dto-ts';
 
@@ -9,21 +8,17 @@ import { ResourceMapping as route } from '~lib/enum/resource-mapping.enum';
 class UserProfileServiceV3TestSuite extends ResourceServiceTestSuite<UserProfileDTOV3, UserProfileServiceV3> {
 
 	constructor() {
-		super('UserProfileServiceV3', route.USER_PROFILE.getPath, 'UserProfileDTOV3', mockUserProfileDTOV3())
+		super(route.USER_PROFILE.getPath, 'UserProfileDTOV3', mockUserProfileDTOV3());
+		this.providers.push(UserProfileServiceV3);
 	}
 
 	protected getInjectedService(): UserProfileServiceV3 {
 		return TestBed.inject(UserProfileServiceV3);
 	}
 
-	protected getProviders(): Provider[] {
-		return [
-			this.getRequestInterceptorProvider(),
-			UserProfileServiceV3
-		];
-	}
-
 }
 
-const testSuite: UserProfileServiceV3TestSuite = new UserProfileServiceV3TestSuite();
-testSuite.run();
+describe('UserProfileServiceV3TestSuite', () => {
+	const testSuite: UserProfileServiceV3TestSuite = new UserProfileServiceV3TestSuite();
+	testSuite.run();
+});
