@@ -8,7 +8,7 @@ import { ResourceMapping as route } from '~lib/enum/resource-mapping.enum';
 class GroupServiceV4TestSuite extends ResourceServiceTestSuite<GroupDTOV4, GroupServiceV4> {
 
 	constructor() {
-		super(route.GROUPS.getPath, 'GroupDTOV4', mockGroupDTOV4());
+		super(route.GROUPS.getPath(), 'GroupDTOV4', mockGroupDTOV4());
 		this.providers.push(GroupServiceV4);
 	}
 

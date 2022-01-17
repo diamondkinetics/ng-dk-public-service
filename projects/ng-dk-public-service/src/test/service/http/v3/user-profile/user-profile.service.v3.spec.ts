@@ -8,7 +8,7 @@ import { ResourceMapping as route } from '~lib/enum/resource-mapping.enum';
 class UserProfileServiceV3TestSuite extends ResourceServiceTestSuite<UserProfileDTOV3, UserProfileServiceV3> {
 
 	constructor() {
-		super(route.USER_PROFILE.getPath, 'UserProfileDTOV3', mockUserProfileDTOV3());
+		super(route.USER_PROFILE.getPath(), 'UserProfileDTOV3', mockUserProfileDTOV3());
 		this.providers.push(UserProfileServiceV3);
 	}
 

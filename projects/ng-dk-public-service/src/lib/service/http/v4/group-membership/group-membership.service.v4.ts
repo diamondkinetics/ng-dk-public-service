@@ -10,7 +10,7 @@ import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum
 export class GroupMembershipServiceV4 extends AbstractResourceService<GroupMembershipDTOV4> {
 
 	constructor(protected http: HttpClient) {
-		super(http, 4, route.GROUP_MEMBERSHIPS.getPath);
+		super(http, 4, route.GROUP_MEMBERSHIPS.getPath());
 	}
 
 	public listSummaries(params?: {}): Observable<GroupMembershipSummaryDTOV4[]> {
@@ -19,7 +19,7 @@ export class GroupMembershipServiceV4 extends AbstractResourceService<GroupMembe
 
 	public updateRole(role: RoleDTOV2, groupUuid: string, memberUuid: string): Observable<GroupMembershipDTOV4> {
 		return this.http.post<GroupMembershipDTOV4>(
-			`/${this.getVersionString()}/${route.GROUPS.getPath}/${groupUuid}/membership/${memberUuid}/role`,
+			`/${this.getVersionString()}/${route.GROUPS}/${groupUuid}/membership/${memberUuid}/role`,
 			role);
 	}
 

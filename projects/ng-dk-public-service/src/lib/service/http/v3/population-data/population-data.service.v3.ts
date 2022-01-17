@@ -9,7 +9,7 @@ import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum
 export class PopulationDataServiceV3 extends AbstractResourceService<PopulationDataDTOV3> {
 
 	constructor(protected http: HttpClient) {
-		super(http, 3, route.POPULATION_DATA.getPath);
+		super(http, 3, route.POPULATION_DATA.getPath());
 	}
 
 }

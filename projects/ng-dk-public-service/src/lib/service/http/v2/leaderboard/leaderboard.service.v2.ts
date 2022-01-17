@@ -10,7 +10,7 @@ import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum
 export class LeaderboardServiceV2 extends AbstractResourceService<LeaderboardDTOV2> {
 
 	constructor(protected http: HttpClient) {
-		super(http, 2, route.LEADERBOARDS.getPath)
+		super(http, 2, route.LEADERBOARDS.getPath())
 	}
 
 	public getForGroup(groupUuid: string): Observable<LeaderboardDTOV2> {

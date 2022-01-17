@@ -10,7 +10,7 @@ import { AbstractResourceService } from '../../abstract-resource.service';
 export class WebHookServiceV2 extends AbstractResourceService<WebHookDTOV2> {
 
 	constructor(protected http: HttpClient) {
-		super(http, 2, route.WEB_HOOKS.getPath);
+		super(http, 2, route.WEB_HOOKS.getPath());
 	}
 
 	public readForUser(userUuid: string): Observable<WebHookDTOV2[]> {

@@ -10,7 +10,7 @@ class ExportRequestServiceV3TestSuite extends ResourceServiceTestSuite<ExportReq
 	public static readonly suiteName: string = 'ExportRequestServiceV3TestSuite';
 
 	constructor() {
-		super(route.EXPORT_REQUESTS.getPath, 'ExportRequestDTOV3', mockExportRequestDTOV3());
+		super(route.EXPORT_REQUESTS.getPath(), 'ExportRequestDTOV3', mockExportRequestDTOV3());
 		this.providers.push(ExportRequestServiceV3);
 	}
 

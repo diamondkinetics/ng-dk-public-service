@@ -15,7 +15,7 @@ import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum
 export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTOV3> {
 
 	constructor(protected http: HttpClient) {
-		super(http, 3, route.USER_PROFILE.getPath);
+		super(http, 3, route.USER_PROFILE.getPath());
 	}
 
 	/**

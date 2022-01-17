@@ -10,7 +10,7 @@ import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum
 export class CompetitionLevelServiceV2 extends AbstractResourceService<CompetitionLevelDTOV2> {
 
 	constructor(protected http: HttpClient) {
-		super(http, 2, route.COMPETITION_LEVELS.getPath);
+		super(http, 2, route.COMPETITION_LEVELS.getPath());
 	}
 
 }

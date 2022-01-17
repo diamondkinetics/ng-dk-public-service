@@ -10,7 +10,7 @@ import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum
 export class BatModelServiceV2 extends AbstractResourceService<BatModelDTOV2> {
 
 	constructor(protected http: HttpClient) {
-		super(http, 2, route.BAT_MODELS.getPath);
+		super(http, 2, route.BAT_MODELS.getPath());
 	}
 
 }

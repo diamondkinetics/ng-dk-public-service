@@ -12,15 +12,15 @@ export class BillingCardServiceV2 {
 	constructor(protected http: HttpClient) {}
 
 	public create(cardDetails: CardCreationDTOV2, params?: {}): Observable<CardResultDTOV2> {
-		return this.http.post<CardResultDTOV2>(`/v2/${route.BILLING_CARDS.getPath}`, cardDetails, { params });
+		return this.http.post<CardResultDTOV2>(`/v2/${route.BILLING_CARDS}`, cardDetails, { params });
 	}
 
 	public list(): Observable<CardResultDTOV2[]> {
-		return this.http.get<CardResultDTOV2[]>(`/v2/${route.BILLING_CARDS.getPath}`);
+		return this.http.get<CardResultDTOV2[]>(`/v2/${route.BILLING_CARDS}`);
 	}
 
 	public delete(cardId: string): Observable<DeletedCardDTOV2> {
-		return this.http.delete<DeletedCardDTOV2>(`/v2/${route.BILLING_CARDS.getPath}/${cardId}`);
+		return this.http.delete<DeletedCardDTOV2>(`/v2/${route.BILLING_CARDS}/${cardId}`);
 	}
 
 }

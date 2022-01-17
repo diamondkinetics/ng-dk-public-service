@@ -11,7 +11,7 @@ import { ResourceMapping as route } from './../../../../enum/resource-mapping.en
 export class GroupServiceV4 extends AbstractResourceService<GroupDTOV4> {
 
 	constructor(protected http: HttpClient) {
-		super(http, 4, route.GROUPS.getPath);
+		super(http, 4, route.GROUPS.getPath());
 	}
 
 	public uploadGroupImage(groupUuid: string, file: Blob, fileName: string): Observable<GroupDTOV4> {

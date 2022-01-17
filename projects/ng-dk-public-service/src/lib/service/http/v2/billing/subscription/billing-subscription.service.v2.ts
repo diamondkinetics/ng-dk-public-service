@@ -25,14 +25,14 @@ export class BillingSubscriptionServiceV2 {
 		const params = {};
 
 		if (dkSubscription) {
-			params['dkSubscription'] = dkSubscription.getName;
+			params['dkSubscription'] = dkSubscription.getName();
 		}
 
 		return this.http.post<void>(`/v2/${route.BILLING_COUPONS}`, couponRequest, { params });
 	}
 
 	public startTrial(subscriptionType: SubscriptionType): Observable<UserProfileDTOV3> {
-		const params = { type: subscriptionType.getName };
+		const params = { type: subscriptionType.getName() };
 
 		return this.http.post<UserProfileDTOV3>(`/v2/${route.BILLING_TRIAL}`, null, { params });
 	}
@@ -42,10 +42,10 @@ export class BillingSubscriptionServiceV2 {
 		newDkSubscription?: DKSubscription,
 		cardId?: string): Observable<void>
 	{
-		const params = { dkSubscription: dkSubscription.getName };
+		const params = { dkSubscription: dkSubscription.getName() };
 		
 		if (newDkSubscription) {
-			params['newDkSubscription'] = newDkSubscription.getName;
+			params['newDkSubscription'] = newDkSubscription.getName();
 		}
 
 		if (cardId) {
@@ -56,7 +56,7 @@ export class BillingSubscriptionServiceV2 {
 	}
 
 	public cancelSubscription(dkSubscription: DKSubscription, when?: string): Observable<void> {
-		const params = { dkSubscription: dkSubscription.getName };
+		const params = { dkSubscription: dkSubscription.getName() };
 
 		if (when) {
 			params['when'] = when;

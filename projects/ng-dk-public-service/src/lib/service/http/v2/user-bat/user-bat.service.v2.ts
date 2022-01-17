@@ -10,7 +10,7 @@ import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum
 export class UserBatServiceV2 extends AbstractResourceService<UserBatDTOV2> {
 
 	constructor(protected http: HttpClient) {
-		super(http, 2, route.USER_BATS.getPath);
+		super(http, 2, route.USER_BATS.getPath());
 	}
 
 }

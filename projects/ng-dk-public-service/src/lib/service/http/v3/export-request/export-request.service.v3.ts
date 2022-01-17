@@ -10,7 +10,7 @@ import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum
 export class ExportRequestServiceV3 extends AbstractResourceService<ExportRequestDTOV3> {
 
 	constructor(protected http: HttpClient) {
-		super(http, 3, route.EXPORT_REQUESTS.getPath);
+		super(http, 3, route.EXPORT_REQUESTS.getPath());
 	}
 
 	public getExportEventSources(): Observable<ExportEventSource[]> {
