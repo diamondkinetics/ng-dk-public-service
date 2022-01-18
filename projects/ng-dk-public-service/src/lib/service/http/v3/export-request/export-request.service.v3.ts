@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { ExportEventSource, ExportEventType, ExportRequestDTOV3 } from '@diamondkinetics/dk-public-dto-ts';
 
 import { AbstractResourceService } from './../../abstract-resource.service';
-import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum';
+import { ResourceMapping as route } from './../../../../enum/resource-mapping.enum';
 
 @Injectable({ providedIn: 'root' })
 export class ExportRequestServiceV3 extends AbstractResourceService<ExportRequestDTOV3> {
