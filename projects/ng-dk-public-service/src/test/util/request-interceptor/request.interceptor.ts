@@ -10,7 +10,7 @@ export class RequestInterceptor implements HttpInterceptor {
 
 	intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 		const headers = {
-			'DK-PLATFORM': 'dkweb'
+			'DK-PLATFORM': 'dk-web-test'
 		};
 
 		request = request.clone({
