@@ -24,7 +24,7 @@ phases:
       - CURRENT_VERSION=$(npm show -q @diamondkinetics/ng-dk-public-service version)
       - SRC_VERSION=$(node -pe "require('./package.json').version")
       - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-      - if [ "$CURRENT_VERSION" != "$SRC_VERSION" ]; then npm publish --access=public; fi
+      - if [ "$CURRENT_VERSION" != "$SRC_VERSION" ]; then cd dist/ng-dk-public-service && npm publish --access=public; fi
       - if [ "$CURRENT_VERSION" = "$SRC_VERSION "]; then echo "No new version to publish (Currently $CURRENT_VERSION)."; fi
 artifacts:
   files:
