@@ -77,7 +77,7 @@ class ExportRequestServiceV3TestSuite extends ResourceServiceTestSuite<ExportReq
 				});
 
 				const req = this.httpTestingController.expectOne(
-					`${environment.apiUrl}/${this.service.getVersionString()}/${route.GROUPS}/${this.mockResource.groupUuid}/exportRequests`
+					`${environment.apiUrl}/${this.service.getVersionString()}/${route.GROUPS}/${this.mockGroup.uuid}/exportRequests`
 				);
 
 				this.expectGetRequest(req.request.method);
