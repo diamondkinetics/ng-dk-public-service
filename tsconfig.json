@@ -12,12 +12,6 @@
     },
     {
       "path": "./projects/ng-dk-public-service/tsconfig.spec.json"
-    },
-    {
-      "path": "./projects/ng-dk-public-service-showcase/tsconfig.app.json"
-    },
-    {
-      "path": "./projects/ng-dk-public-service-showcase/tsconfig.spec.json"
     }
   ]
 }

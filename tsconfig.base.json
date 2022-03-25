@@ -31,9 +31,6 @@
       ],
       "~test/*": [
         "projects/ng-dk-public-service/src/test/*"
-      ],
-      "~app/*": [
-        "projects/ng-dk-public-service-showcase/src/app/*"
       ]
     }
   },

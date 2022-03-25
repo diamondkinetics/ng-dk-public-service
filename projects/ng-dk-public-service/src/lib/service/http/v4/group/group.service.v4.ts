@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { GroupSummaryDTOV4, GroupDTOV4 } from '@diamondkinetics/dk-public-dto-ts';
+import { GroupDTOV4 } from '@diamondkinetics/dk-public-dto-ts';
 
 import { AbstractResourceService } from './../../abstract-resource.service';
 import { ResourceMapping as route } from './../../../../enum/resource-mapping.enum';
@@ -21,10 +21,10 @@ export class GroupServiceV4 extends AbstractResourceService<GroupDTOV4> {
 		return this.http.post<GroupDTOV4>(`/${this.getVersionString()}/${route.GROUPS}/${groupUuid}/groupImage`, formData);
 	}
 
-	public searchGroups(q: string): Observable<GroupSummaryDTOV4[]> {
+	public searchGroups(q: string): Observable<GroupDTOV4[]> {
 		const params = { q };
 
-		return this.http.get<GroupSummaryDTOV4[]>(`/${this.getVersionString()}/${route.GROUPS_SEARCH}`, { params });
+		return this.http.get<GroupDTOV4[]>(`/${this.getVersionString()}/${route.GROUPS_SEARCH}`, { params });
 	}
 
 }
