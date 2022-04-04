@@ -21,6 +21,11 @@ export class ExportRequestServiceV3 extends AbstractResourceService<ExportReques
 		return this.http.get<ExportEventType[]>(`/${this.getVersionString()}/exportEventTypes`);
 	}
 
+	public getAllForUser(includeFromGroups: boolean = false): Observable<ExportRequestDTOV3[]> {
+		return this.http.get<ExportRequestDTOV3[]>(`/${this.getVersionString()}/${this.endpoint}`,
+			{ params: { includeFromGroups }});
+	}
+
 	public getAllForUserAndGroup(groupUuid: string): Observable<ExportRequestDTOV3[]> {
 		return this.http.get<ExportRequestDTOV3[]>(
 			`/${this.getVersionString()}/${route.GROUPS}/${groupUuid}/exportRequests`);
