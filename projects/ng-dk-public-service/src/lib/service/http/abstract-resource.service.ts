@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { AbstractSyncableDTOV2, AbstractSyncableDTOV3, AbstractSyncableDTOV4 } from '@diamondkinetics/dk-public-dto-ts';
 import { Observable } from 'rxjs';
 
-import { ResourceMapping as routes } from '~lib/enum/resource-mapping.enum';
+import { ResourceMapping as routes } from './../../enum/resource-mapping.enum';
 
 export abstract class AbstractResourceService<
 	T extends AbstractSyncableDTOV2|AbstractSyncableDTOV3|AbstractSyncableDTOV4>
