@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
+import { AbstractSyncableDTOV2, AbstractSyncableDTOV3, AbstractSyncableDTOV4 } from '@diamondkinetics/dk-public-dto-ts';
 import { Observable } from 'rxjs';
 
-import { AbstractSyncableDTOV2, AbstractSyncableDTOV3, AbstractSyncableDTOV4 } from '@diamondkinetics/dk-public-dto-ts';
+import { ResourceMapping as routes } from '~lib/enum/resource-mapping.enum';
 
 export abstract class AbstractResourceService<
 	T extends AbstractSyncableDTOV2|AbstractSyncableDTOV3|AbstractSyncableDTOV4>
@@ -31,6 +32,13 @@ export abstract class AbstractResourceService<
 
 	public list(params?: {}): Observable<T[]> {
 		return this.http.get<T[]>(`/${this.getVersionString()}/${this.endpoint}`, { params });
+	}
+
+	public listForUser(userUuid: string, params?: {}): Observable<T[]> {
+		return this.http.get<T[]>(
+			`/${this.getVersionString()}/${routes.USERS.getPath()}/${userUuid}/${this.endpoint}`,
+			{ params }
+		);
 	}
 
 	public getVersionString(): string {
