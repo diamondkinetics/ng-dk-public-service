@@ -21,7 +21,7 @@
     "@angular/platform-browser": "^13.3.0",
     "@angular/platform-browser-dynamic": "^13.3.0",
     "@angular/router": "^13.3.0",
-    "@diamondkinetics/dk-public-dto-ts": "^0.1.36",
+    "@diamondkinetics/dk-public-dto-ts": "^0.1.37",
     "rxjs": "^6.6.7",
     "tslib": "^2.3.1",
     "zone.js": "~0.11.4"
