@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import {
 	UserProfileDTOV3,
 	RegisterWithProfileRequestDTOV3,
@@ -24,9 +24,11 @@ export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTO
 	 * @param   registrationRequest The data to use for the registration.
 	 * @returns                     An observable containing a UserProfileDTOV3 object with data from the API.
 	 */
-	public register(registrationRequest: RegisterWithProfileRequestDTOV3): Observable<UserProfileDTOV3> {
-		return this.http.post<UserProfileDTOV3>(
-			`/${this.getVersionString()}/${route.USERS}`, registrationRequest);
+	public register(registrationRequest: RegisterWithProfileRequestDTOV3): Observable<HttpResponse<UserProfileDTOV3>> {
+		return this.http.post<HttpResponse<UserProfileDTOV3>>(
+			`/${this.getVersionString()}/${route.USERS}`,
+			registrationRequest,
+			{ observe: 'response' as 'body' });
 	}
 
 	/**
@@ -50,7 +52,7 @@ export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTO
 
 	/**
 	 * Sets user profile information for the logged in user.
-	 * 
+	 *
 	 * @param   userProfile The user profile data to set.
 	 * @returns             An observable containing a UserProfileDTOV3 object with the updated profile data.
 	 */
@@ -60,7 +62,7 @@ export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTO
 
 	/**
 	 * Updates the profile image of the currently logged in user.
-	 * 
+	 *
 	 * @param   file     The image file to be uploaded.
 	 * @param   fileName The name of the file.
 	 * @returns          An observable containing a UserProfileDTOV3 object with the updated URL to the profile image.
@@ -74,7 +76,7 @@ export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTO
 
 	/**
 	 * Resets the password of a user.
-	 * 
+	 *
 	 * @param   request The reset password request data.
 	 * @returns         An observable containing a LoggedInUserDTO.
 	 */
@@ -84,7 +86,7 @@ export class UserProfileServiceV3 extends AbstractResourceService<UserProfileDTO
 
 	/**
 	 * Searches for users by name and email
-	 * 
+	 *
 	 * @param   q The search query string.
 	 * @returns   An observable containing a user results array.
 	 */
