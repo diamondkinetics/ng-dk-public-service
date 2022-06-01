@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class OAuthServiceV2 {
 
 	constructor(private http: HttpClient) {}
