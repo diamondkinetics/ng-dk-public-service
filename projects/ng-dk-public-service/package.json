@@ -5,8 +5,8 @@
   "repository": "https://github.com/diamondkinetics/ng-dk-public-service",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^13.3.0",
-    "@angular/core": "^13.3.0"
+    "@angular/common": "^14.2.6",
+    "@angular/core": "^14.2.6"
   },
   "dependencies": {
     "tslib": "^2.3.1"

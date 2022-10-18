@@ -44,7 +44,6 @@
       }
     }
   },
-  "defaultProject": "ng-dk-public-service",
   "cli": {
     "analytics": "fe07b8c4-ce2a-4df4-82e6-19682a2d1e59"
   }
