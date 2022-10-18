@@ -11,6 +11,14 @@ export * from './lib/service/http/auth/auth.module';
 export * from './lib/service/http/auth/auth.service';
 export * from './lib/service/http/abstract-resource.service';
 export * from './lib/service/http/abstract-sensor-session.service';
+export * from './lib/service/http/abstract-request-response-resource.service';
+
+/////////////////////////////////////////////////////////////////////////////////////
+//                                      V6
+/////////////////////////////////////////////////////////////////////////////////////
+export * from './lib/service/http/v6/service.module.v6';
+export * from './lib/service/http/v6/account-group/account-group.module.v6';
+export * from './lib/service/http/v6/account-group/account-group.service.v6';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V4

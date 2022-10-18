@@ -22,6 +22,7 @@ export class ResourceMapping {
 	public static readonly POPULATION_DATA = new ResourceMapping('swingPopulationData');
 	public static readonly LEADERBOARDS = new ResourceMapping('leaderboards');
 	public static readonly EXPORT_REQUESTS = new ResourceMapping('exportRequests');
+  public static readonly ACCOUNT_GROUPS = new ResourceMapping('accountGroups');
 
 	constructor(private readonly path: string) {}
 
