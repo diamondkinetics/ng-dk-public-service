@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { AbstractRequestResponseResourceService } from './../../abstract-request-response-resource.service';
 import { ResourceMapping } from './../../../../enum/resource-mapping.enum';
 import { UserProfileCreateRequestV6, UserProfileResponseV6 } from '@diamondkinetics/dk-public-dto-ts';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class UserProfileServiceV6 extends AbstractRequestResponseResourceService<
@@ -15,6 +16,13 @@ export class UserProfileServiceV6 extends AbstractRequestResponseResourceService
 
   constructor(protected httpClient: HttpClient) {
     super(httpClient, 6, ResourceMapping.USER_PROFILE.getPath())
+  }
+
+  public register(createRequest: UserProfileCreateRequestV6, params?: {}): Observable<UserProfileResponseV6> {
+    return this.httpClient.post<UserProfileResponseV6>(
+      `${this.getBaseUri()}/${ResourceMapping.USERS}`,
+      createRequest, { params }
+    );
   }
 
 }
