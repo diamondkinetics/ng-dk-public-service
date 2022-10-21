@@ -20,7 +20,7 @@ export class UserProfileServiceV6 extends AbstractRequestResponseResourceService
 
   public register(createRequest: UserProfileCreateRequestV6, params?: {}): Observable<UserProfileResponseV6> {
     return this.httpClient.post<UserProfileResponseV6>(
-      `${this.getBaseUri()}/${ResourceMapping.USERS}`,
+      `/v${this.versionNumber}/${ResourceMapping.USERS}`,
       createRequest, { params }
     );
   }
