@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import {
+  UserProfileCollectionResponseV6,
+  UserProfileCreateRequestV6,
+  UserProfileResponseV6,
+  UserProfileUpdateRequestV6
+} from '@diamondkinetics/dk-public-dto-ts';
+import { Observable } from 'rxjs';
 import { AbstractRequestResponseResourceService } from './../../abstract-request-response-resource.service';
 import { ResourceMapping } from './../../../../enum/resource-mapping.enum';
-import { UserProfileCreateRequestV6, UserProfileResponseV6 } from '@diamondkinetics/dk-public-dto-ts';
-import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class UserProfileServiceV6 extends AbstractRequestResponseResourceService<
   UserProfileCreateRequestV6,
-  void,
+  UserProfileUpdateRequestV6,
   UserProfileResponseV6,
-  void
+  UserProfileCollectionResponseV6
 > {
 
   constructor(protected httpClient: HttpClient) {
@@ -25,4 +29,22 @@ export class UserProfileServiceV6 extends AbstractRequestResponseResourceService
     );
   }
 
+  public findUsers(q: string, params?: {}): Observable<UserProfileCollectionResponseV6> {
+    const queryParams = params ? { ...params, q } : { q };
+
+    return this.httpClient.get<UserProfileCollectionResponseV6>(
+      `/v${this.versionNumber}/${ResourceMapping.USER_PROFILE_SEARCH}`,
+      { params: queryParams }
+    );
+  }
+
+  public updateProfileImage(file: Blob, fileName: string): Observable<UserProfileResponseV6> {
+		const formData = new FormData();
+		formData.append('file', file, fileName);
+
+    return this.httpClient.post<UserProfileResponseV6>(
+      `/v${this.versionNumber}/${ResourceMapping.USER_PROFILE_IMAGE}`,
+      formData
+    );
+  }
 }
