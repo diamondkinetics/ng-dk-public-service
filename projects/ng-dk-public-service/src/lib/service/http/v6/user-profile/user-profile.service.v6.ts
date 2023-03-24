@@ -47,4 +47,11 @@ export class UserProfileServiceV6 extends AbstractRequestResponseResourceService
       formData
     );
   }
+
+  public updateProfile(updateRequest: UserProfileUpdateRequestV6): Observable<UserProfileResponseV6> {
+    return this.httpClient.post<UserProfileResponseV6>(
+      `/v${this.versionNumber}/${ResourceMapping.USER_PROFILE}`,
+      updateRequest
+    );
+  }
 }
