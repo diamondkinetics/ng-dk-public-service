@@ -8,7 +8,7 @@ phases:
       - echo Installing package.json dependencies...
       - npm install
       - echo Installing Angular CLI...
-      - npm install -g @angular/cli@^12.2.15
+      - npm install -g @angular/cli@^15.2.7
       - echo Installing headless Chrome for testing.
       - apt-get install curl wget libxss1 libappindicator1 libindicator7 -y
       - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
