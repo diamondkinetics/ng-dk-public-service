@@ -10,7 +10,8 @@ phases:
       - echo Installing Angular CLI...
       - npm install -g @angular/cli@^$ANGULAR_VERSION_MAJOR.x
       - echo Installing headless Chrome for testing.
-      - apt-get install curl wget libxss1 libappindicator1 libindicator7 -y
+      - apt-get install curl wget libxss1 libappindicator1 -y
+      - apt-get -f install libindicator7 -y
       - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
       - apt install ./google-chrome*.deb -y
   pre_build:
