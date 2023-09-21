@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AbstractRequestResponseResourceService } from '../../abstract-request-response-resource.service';
 import { CompetitionLevelCollectionResponseV6, CompetitionLevelResponseV6 } from '@diamondkinetics/dk-public-dto-ts';
-import { ResourceMapping } from '~lib/enum/resource-mapping.enum';
+import { ResourceMapping } from '../../../../enum/resource-mapping.enum';
 
 @Injectable({ providedIn: 'root' })
 export class CompetitionLevelV6Service extends AbstractRequestResponseResourceService<
