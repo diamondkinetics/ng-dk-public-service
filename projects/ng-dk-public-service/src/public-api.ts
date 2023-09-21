@@ -16,11 +16,13 @@ export { AbstractRequestResponseResourceService } from './lib/service/http/abstr
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V6
 /////////////////////////////////////////////////////////////////////////////////////
-export { ServiceModuleV6 } from './lib/service/http/v6/service.module.v6';
-export { AccountGroupModuleV6 } from './lib/service/http/v6/account-group/account-group.module.v6';
-export { AccountGroupServiceV6 } from './lib/service/http/v6/account-group/account-group.service.v6';
-export { UserProfileModuleV6 } from './lib/service/http/v6/user-profile/user-profile.module.v6';
-export { UserProfileServiceV6 } from './lib/service/http/v6/user-profile/user-profile.service.v6';
+export { ServiceV6Module } from './lib/service/http/v6/service-v6.module';
+export { AccountGroupV6Module } from './lib/service/http/v6/account-group/account-group-v6.module';
+export { AccountGroupV6Service } from './lib/service/http/v6/account-group/account-group-v6.service';
+export { UserProfileV6Module } from './lib/service/http/v6/user-profile/user-profile-v6.module';
+export { UserProfileV6Service } from './lib/service/http/v6/user-profile/user-profile-v6.service';
+export { CompetitionLevelV6Module } from './lib/service/http/v6/competition-level/competition-level-v6.module';
+export { CompetitionLevelV6Service } from './lib/service/http/v6/competition-level/competition-level-v6.service';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V4
