@@ -7,11 +7,11 @@ import {
   UserProfileUpdateRequestV6
 } from '@diamondkinetics/dk-public-dto-ts';
 import { Observable } from 'rxjs';
-import { AbstractRequestResponseResourceService } from './../../abstract-request-response-resource.service';
-import { ResourceMapping } from './../../../../enum/resource-mapping.enum';
+import { AbstractRequestResponseResourceService } from '../../abstract-request-response-resource.service';
+import { ResourceMapping } from '../../../../enum/resource-mapping.enum';
 
 @Injectable({ providedIn: 'root' })
-export class UserProfileServiceV6 extends AbstractRequestResponseResourceService<
+export class UserProfileV6Service extends AbstractRequestResponseResourceService<
   UserProfileCreateRequestV6,
   UserProfileUpdateRequestV6,
   UserProfileResponseV6,

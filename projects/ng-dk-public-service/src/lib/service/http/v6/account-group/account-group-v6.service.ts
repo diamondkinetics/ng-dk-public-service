@@ -2,17 +2,16 @@ import { AccountGroupResponseV6, UserProfileCreateRequestNoCredentialsV6 } from 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ResourceMapping } from './../../../../enum/resource-mapping.enum';
+import { ResourceMapping } from '../../../../enum/resource-mapping.enum';
 import { AbstractRequestResponseResourceService } from '../../abstract-request-response-resource.service';
 
 @Injectable({ providedIn: 'root' })
-export class AccountGroupServiceV6 extends AbstractRequestResponseResourceService<
+export class AccountGroupV6Service extends AbstractRequestResponseResourceService<
   void,
   void,
   AccountGroupResponseV6,
   void
 > {
-
   constructor(protected httpClient: HttpClient) {
     super(httpClient, 6, ResourceMapping.ACCOUNT_GROUPS.getPath());
   }
