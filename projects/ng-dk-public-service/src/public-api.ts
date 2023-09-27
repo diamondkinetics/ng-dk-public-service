@@ -23,6 +23,8 @@ export { UserProfileV6Module } from './lib/service/http/v6/user-profile/user-pro
 export { UserProfileV6Service } from './lib/service/http/v6/user-profile/user-profile-v6.service';
 export { CompetitionLevelV6Module } from './lib/service/http/v6/competition-level/competition-level-v6.module';
 export { CompetitionLevelV6Service } from './lib/service/http/v6/competition-level/competition-level-v6.service';
+export { SwingScoreV6Module } from './lib/service/http/v6/swing-score/swing-score-v6.module';
+export { SwingScoreV6Service } from './lib/service/http/v6/swing-score/swing-score-v6.service';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V4
