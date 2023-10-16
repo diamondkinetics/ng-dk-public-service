@@ -27,6 +27,8 @@ export { SwingScoreV6Module } from './lib/service/http/v6/swing-score/swing-scor
 export { SwingScoreV6Service } from './lib/service/http/v6/swing-score/swing-score-v6.service';
 export { SwingScorePopulationV6Module } from './lib/service/http/v6/swing-score-population/swing-score-population-v6.module';
 export { SwingScorePopulationV6Service } from './lib/service/http/v6/swing-score-population/swing-score-population-v6.service';
+export { ItemV6Module } from './lib/service/http/v6/item/item-v6.module';
+export { ItemV6Service } from './lib/service/http/v6/item/item-v6.service';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V4
