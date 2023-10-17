@@ -8,6 +8,8 @@ export class ItemV6Service {
   constructor(private httpClient: HttpClient) {}
 
   public getAllAvatars(page = 0, size = 20): Observable<AvatarCollectionResponseV6> {
-    return this.httpClient.get<AvatarCollectionResponseV6>('/v6/avatars');
+    const params = { page, size };
+
+    return this.httpClient.get<AvatarCollectionResponseV6>('/v6/avatars', { params });
   }
 }
