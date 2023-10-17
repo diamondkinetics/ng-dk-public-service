@@ -54,4 +54,10 @@ export class UserProfileV6Service extends AbstractRequestResponseResourceService
       updateRequest
     );
   }
+
+  public getProfileByUuid(uuid: string): Observable<UserProfileResponseV6> {
+    return this.httpClient.get<UserProfileResponseV6>(
+      `/v${this.versionNumber}/${ResourceMapping.USERS}/${uuid}/${ResourceMapping.PROFILE}`
+    );
+  }
 }

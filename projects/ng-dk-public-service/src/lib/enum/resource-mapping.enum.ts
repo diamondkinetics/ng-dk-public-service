@@ -1,6 +1,7 @@
 export class ResourceMapping {
   public static readonly USERS = new ResourceMapping('users');
-  public static readonly USER_PROFILE = new ResourceMapping(`${ResourceMapping.USERS}/profile`);
+  public static readonly PROFILE = new ResourceMapping('profile');
+  public static readonly USER_PROFILE = new ResourceMapping(`${ResourceMapping.USERS}/${ResourceMapping.PROFILE}`);
   public static readonly USER_PROFILE_IMAGE = new ResourceMapping(`${ResourceMapping.USER_PROFILE}/profileImage`);
   public static readonly USER_PROFILE_SEARCH = new ResourceMapping(`${ResourceMapping.USER_PROFILE}/search`);
   public static readonly GROUPS = new ResourceMapping('groups');
