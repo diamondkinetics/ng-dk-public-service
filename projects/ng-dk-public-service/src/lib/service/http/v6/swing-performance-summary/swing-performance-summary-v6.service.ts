@@ -4,7 +4,7 @@ import { SwingPerformanceComparisonResponseV6 } from '@diamondkinetics/dk-public
 import { ResourceMapping } from '../../../../enum/resource-mapping.enum';
 import { Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class SwingPerformanceSummaryV6Service {
   constructor(private httpClient: HttpClient) {}
 
