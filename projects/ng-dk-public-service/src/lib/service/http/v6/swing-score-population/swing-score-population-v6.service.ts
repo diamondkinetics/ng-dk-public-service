@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { SwingScorePopulationCollectionResponseV6, SwingScorePopulationResponseV6 } from '@diamondkinetics/dk-public-dto-ts';
 import { AbstractRequestResponseResourceService } from '../../abstract-request-response-resource.service';
 import { ResourceMapping } from '../../../../enum/resource-mapping.enum';
-import { SwingScorePopulationCollectionResponseV6, SwingScorePopulationResponseV6 } from '@diamondkinetics/dk-public-dto-ts';
 
 @Injectable({ providedIn: 'root' })
 export class SwingScorePopulationV6Service extends AbstractRequestResponseResourceService<

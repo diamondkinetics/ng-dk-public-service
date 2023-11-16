@@ -29,6 +29,8 @@ export { SwingScorePopulationV6Module } from './lib/service/http/v6/swing-score-
 export { SwingScorePopulationV6Service } from './lib/service/http/v6/swing-score-population/swing-score-population-v6.service';
 export { ItemV6Module } from './lib/service/http/v6/item/item-v6.module';
 export { ItemV6Service } from './lib/service/http/v6/item/item-v6.service';
+export { SwingPerformanceSummaryV6Module } from './lib/service/http/v6/swing-performance-summary/swing-performance-summary-v6.module';
+export { SwingPerformanceSummaryV6Service } from './lib/service/http/v6/swing-performance-summary/swing-performance-summary-v6.service';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V4
@@ -73,4 +75,4 @@ export { OAuthServiceV2 } from './lib/service/http/v2/oauth/oauth.service.v2';
 export { WebHookModuleV2 } from './lib/service/http/v2/web-hook/web-hook.module.v2';
 export { WebHookServiceV2 } from './lib/service/http/v2/web-hook/web-hook.service.v2';
 export { LeaderboardModuleV2 } from './lib/service/http/v2/leaderboard/leaderboard.module.v2';
-export { LeaderboardServiceV2 }from './lib/service/http/v2/leaderboard/leaderboard.service.v2';
+export { LeaderboardServiceV2 } from './lib/service/http/v2/leaderboard/leaderboard.service.v2';
