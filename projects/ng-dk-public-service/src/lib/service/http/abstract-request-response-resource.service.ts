@@ -27,10 +27,10 @@ export abstract class AbstractRequestResponseResourceService<
     size = 20,
     sortBy = 'serverCreated',
     sortDirection = 'desc',
-    params?: {}
+    params = {}
   ): Observable<COLLECTION_RESPONSE_DTO> {
     const pagingParams = { page, size, sort: `${sortBy},${sortDirection}` };
-    params = !!params ? { ...params, ...pagingParams } : pagingParams;
+    params = { ...params, ...pagingParams };
 
     return this.httpClient.get<COLLECTION_RESPONSE_DTO>(`${this.getBaseUri()}`, { params });
   }
@@ -41,10 +41,10 @@ export abstract class AbstractRequestResponseResourceService<
     size = 20,
     sortBy = 'serverCreated',
     sortDirection = 'desc',
-    params?: {}
+    params = {}
   ): Observable<COLLECTION_RESPONSE_DTO> {
     const pagingParams = { page, size, sort: `${sortBy},${sortDirection}` };
-    params = !!params ? { ...params, ...pagingParams } : pagingParams;
+    params = { ...params, ...pagingParams };
 
     return this.httpClient.get<COLLECTION_RESPONSE_DTO>(
       `/v${this.versionNumber}/${ResourceMapping.USERS}/${userUuid}/${this.endpoint}`,

@@ -24,9 +24,11 @@ export class ResourceMapping {
   public static readonly LEADERBOARDS = new ResourceMapping('leaderboards');
   public static readonly EXPORT_REQUESTS = new ResourceMapping('exportRequests');
   public static readonly ACCOUNT_GROUPS = new ResourceMapping('accountGroups');
+  public static readonly SWINGS = new ResourceMapping('swings');
   public static readonly SWING_SCORES = new ResourceMapping('swingScores');
   public static readonly SWING_SCORE_POPULATIONS = new ResourceMapping('swingScorePopulations');
   public static readonly SWING_PERFORMANCE_SUMMARY = new ResourceMapping('swingPerformanceSummary');
+  public static readonly PITCHES = new ResourceMapping('pitches');
 
   constructor(private readonly path: string) {}
 

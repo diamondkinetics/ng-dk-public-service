@@ -6,6 +6,10 @@ import { SwingScoreV6Module } from './swing-score/swing-score-v6.module';
 import { SwingScorePopulationV6Module } from './swing-score-population/swing-score-population-v6.module';
 import { ItemV6Module } from './item/item-v6.module';
 import { SwingPerformanceSummaryV6Module } from './swing-performance-summary/swing-performance-summary-v6.module';
+import { BattingSessionV6Module } from './batting-session/batting-session-v6.module';
+import { PitchingSessionV6Module } from './pitching-session/pitching-session-v6.module';
+import { SwingV6Module } from './swing/swing-v6.module';
+import { PitchV6Module } from './pitch/pitch-v6.module';
 
 @NgModule({
   imports: [CommonModule],
@@ -16,6 +20,10 @@ import { SwingPerformanceSummaryV6Module } from './swing-performance-summary/swi
     SwingScorePopulationV6Module,
     ItemV6Module,
     SwingPerformanceSummaryV6Module,
+    BattingSessionV6Module,
+    PitchingSessionV6Module,
+    SwingV6Module,
+    PitchV6Module
   ],
 })
 export class ServiceV6Module {
