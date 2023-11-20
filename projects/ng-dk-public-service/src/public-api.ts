@@ -31,6 +31,14 @@ export { ItemV6Module } from './lib/service/http/v6/item/item-v6.module';
 export { ItemV6Service } from './lib/service/http/v6/item/item-v6.service';
 export { SwingPerformanceSummaryV6Module } from './lib/service/http/v6/swing-performance-summary/swing-performance-summary-v6.module';
 export { SwingPerformanceSummaryV6Service } from './lib/service/http/v6/swing-performance-summary/swing-performance-summary-v6.service';
+export { BattingSessionV6Module } from './lib/service/http/v6/batting-session/batting-session-v6.module';
+export { BattingSessionV6Service } from './lib/service/http/v6/batting-session/batting-session-v6.service';
+export { PitchingSessionV6Module } from './lib/service/http/v6/pitching-session/pitching-session-v6.module';
+export { PitchingSessionV6Service } from './lib/service/http/v6/pitching-session/pitching-session-v6.service';
+export { SwingV6Module } from './lib/service/http/v6/swing/swing-v6.module';
+export { SwingV6Service } from './lib/service/http/v6/swing/swing-v6.service';
+export { PitchV6Module } from './lib/service/http/v6/pitch/pitch-v6.module';
+export { PitchV6Service } from './lib/service/http/v6/pitch/pitch-v6.service';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V4
