@@ -10,6 +10,8 @@ import { BattingSessionV6Module } from './batting-session/batting-session-v6.mod
 import { PitchingSessionV6Module } from './pitching-session/pitching-session-v6.module';
 import { SwingV6Module } from './swing/swing-v6.module';
 import { PitchV6Module } from './pitch/pitch-v6.module';
+import { ChallengeV6Module } from './challenge/challenge-v6.module';
+import { ChallengeProgressV6Module } from './challenge-progress/challenge-progress-v6.module';
 
 @NgModule({
   imports: [CommonModule],
@@ -23,7 +25,9 @@ import { PitchV6Module } from './pitch/pitch-v6.module';
     BattingSessionV6Module,
     PitchingSessionV6Module,
     SwingV6Module,
-    PitchV6Module
+    PitchV6Module,
+    ChallengeV6Module,
+    ChallengeProgressV6Module,
   ],
 })
 export class ServiceV6Module {

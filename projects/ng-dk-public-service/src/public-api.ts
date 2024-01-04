@@ -39,6 +39,10 @@ export { SwingV6Module } from './lib/service/http/v6/swing/swing-v6.module';
 export { SwingV6Service } from './lib/service/http/v6/swing/swing-v6.service';
 export { PitchV6Module } from './lib/service/http/v6/pitch/pitch-v6.module';
 export { PitchV6Service } from './lib/service/http/v6/pitch/pitch-v6.service';
+export { ChallengeV6Module } from './lib/service/http/v6/challenge/challenge-v6.module';
+export { ChallengeV6Service } from './lib/service/http/v6/challenge/challenge-v6.service';
+export { ChallengeProgressV6Module } from './lib/service/http/v6/challenge-progress/challenge-progress-v6.module';
+export { ChallengeProgressV6Service } from './lib/service/http/v6/challenge-progress/challenge-progress-v6.service';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V4
