@@ -1,4 +1,8 @@
-import { AccountGroupResponseV6, UserProfileCreateRequestNoCredentialsV6 } from '@diamondkinetics/dk-public-dto-ts';
+import {
+  AccountGroupDeepLinkCreateRequestV6,
+  AccountGroupResponseV6,
+  UserProfileCreateRequestNoCredentialsV6,
+} from '@diamondkinetics/dk-public-dto-ts';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -28,6 +32,19 @@ export class AccountGroupV6Service extends AbstractRequestResponseResourceServic
   public deleteAccountGroup(uuid: string): Observable<AccountGroupResponseV6> {
     return this.httpClient.delete<AccountGroupResponseV6>(
       `/v${this.versionNumber}/${ResourceMapping.ACCOUNT_GROUPS}/${uuid}`
+    );
+  }
+
+  public setDeepLink(uuid: string, request: AccountGroupDeepLinkCreateRequestV6): Observable<AccountGroupResponseV6> {
+    return this.httpClient.post<AccountGroupResponseV6>(
+      `/v${this.versionNumber}/${ResourceMapping.ACCOUNT_GROUPS}/${uuid}/deepLink`,
+      request
+    );
+  }
+
+  public clearDeepLink(uuid: string): Observable<AccountGroupResponseV6> {
+    return this.httpClient.delete<AccountGroupResponseV6>(
+      `/v${this.versionNumber}/${ResourceMapping.ACCOUNT_GROUPS}/${uuid}/deepLink`
     );
   }
 }
