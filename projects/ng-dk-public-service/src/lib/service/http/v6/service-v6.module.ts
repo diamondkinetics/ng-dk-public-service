@@ -12,6 +12,7 @@ import { SwingV6Module } from './swing/swing-v6.module';
 import { PitchV6Module } from './pitch/pitch-v6.module';
 import { ChallengeV6Module } from './challenge/challenge-v6.module';
 import { ChallengeProgressV6Module } from './challenge-progress/challenge-progress-v6.module';
+import { UserToUserConnectionV6Module } from './user-to-user-connection/user-to-user-connection-v6.module';
 
 @NgModule({
   imports: [CommonModule],
@@ -28,6 +29,7 @@ import { ChallengeProgressV6Module } from './challenge-progress/challenge-progre
     PitchV6Module,
     ChallengeV6Module,
     ChallengeProgressV6Module,
+    UserToUserConnectionV6Module,
   ],
 })
 export class ServiceV6Module {

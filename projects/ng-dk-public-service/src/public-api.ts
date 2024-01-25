@@ -43,6 +43,8 @@ export { ChallengeV6Module } from './lib/service/http/v6/challenge/challenge-v6.
 export { ChallengeV6Service } from './lib/service/http/v6/challenge/challenge-v6.service';
 export { ChallengeProgressV6Module } from './lib/service/http/v6/challenge-progress/challenge-progress-v6.module';
 export { ChallengeProgressV6Service } from './lib/service/http/v6/challenge-progress/challenge-progress-v6.service';
+export { UserToUserConnectionV6Module } from './lib/service/http/v6/user-to-user-connection/user-to-user-connection-v6.module';
+export { UserToUserConnectionV6Service } from './lib/service/http/v6/user-to-user-connection/user-to-user-connection-v6.service';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V4

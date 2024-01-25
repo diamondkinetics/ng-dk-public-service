@@ -31,6 +31,7 @@ export class ResourceMapping {
   public static readonly PITCHES = new ResourceMapping('pitches');
   public static readonly CHALLENGES = new ResourceMapping('challenges');
   public static readonly CHALLENGE_PROGRESS = new ResourceMapping('challengeProgress');
+  public static readonly USER_CONNECTIONS = new ResourceMapping(`${ResourceMapping.USERS}/connections`);
 
   constructor(private readonly path: string) {}
 
