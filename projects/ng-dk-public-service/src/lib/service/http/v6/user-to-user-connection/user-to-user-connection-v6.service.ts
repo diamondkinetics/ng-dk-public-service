@@ -31,6 +31,23 @@ export class UserToUserConnectionV6Service extends AbstractRequestResponseResour
     });
   }
 
+  public listForUser(
+    userUuid: string,
+    page = 0,
+    size = 20,
+    sortBy = 'serverCreated',
+    sortDirection = 'desc',
+    params = {}
+  ): Observable<UserToUserConnectionCollectionResponseV6> {
+    const pagingParams = { page, size, sort: `${sortBy},${sortDirection}` };
+    params = { ...params, ...pagingParams };
+
+    return this.httpClient.get<UserToUserConnectionCollectionResponseV6>(
+      `/v${this.versionNumber}/${ResourceMapping.USERS}/${userUuid}/connections`,
+      { params }
+    );
+  }
+
   public getConnectionDetailsByUuid(userAUuid: string, userBUuid: string): Observable<UserToUserConnectionResponseV6> {
     return this.httpClient.get<UserToUserConnectionResponseV6>(
       `/v${this.versionNumber}/${ResourceMapping.USERS}/${userAUuid}/connections/${userBUuid}`
