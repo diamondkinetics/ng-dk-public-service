@@ -34,6 +34,9 @@ export class ResourceMapping {
   public static readonly USER_CONNECTIONS = new ResourceMapping(`${ResourceMapping.USERS}/connections`);
   public static readonly LEVEL_DEFINITIONS = new ResourceMapping('levelDefinitions');
   public static readonly LEVEL_STATUSES = new ResourceMapping('levelStatuses');
+  public static readonly AVATARS = new ResourceMapping('avatars');
+  public static readonly BADGES = new ResourceMapping('badges');
+  public static readonly CARD_DESIGNS = new ResourceMapping('cardDesigns');
 
   constructor(private readonly path: string) {}
 
