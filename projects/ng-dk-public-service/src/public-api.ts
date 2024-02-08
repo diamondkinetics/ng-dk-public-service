@@ -47,6 +47,8 @@ export { UserToUserConnectionV6Module } from './lib/service/http/v6/user-to-user
 export { UserToUserConnectionV6Service } from './lib/service/http/v6/user-to-user-connection/user-to-user-connection-v6.service';
 export { UserActivityV6Module } from './lib/service/http/v6/user-activity/user-activity-v6.module';
 export { UserActivityV6Service } from './lib/service/http/v6/user-activity/user-activity-v6.service';
+export { ActivityDefinitionV6Module } from './lib/service/http/v6/activity-definition/activity-definition-v6.module';
+export { ActivityDefinitionV6Service } from './lib/service/http/v6/activity-definition/activity-definition-v6.service';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V4

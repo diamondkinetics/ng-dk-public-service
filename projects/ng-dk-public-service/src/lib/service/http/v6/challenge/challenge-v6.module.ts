@@ -6,7 +6,7 @@ import { ChallengeV6Service } from './challenge-v6.service';
   imports: [CommonModule],
 })
 export class ChallengeV6Module {
-  constructor(@Optional() @SkipSelf() parentModule: ChallengeV6Service) {
+  constructor(@Optional() @SkipSelf() parentModule: ChallengeV6Module) {
     if (parentModule) {
       throw new Error('ChallengeV6Module is already loaded. Import it in ServiceModuleV6 only.');
     }

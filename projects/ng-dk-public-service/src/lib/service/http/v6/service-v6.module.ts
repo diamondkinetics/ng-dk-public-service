@@ -14,6 +14,7 @@ import { ChallengeV6Module } from './challenge/challenge-v6.module';
 import { ChallengeProgressV6Module } from './challenge-progress/challenge-progress-v6.module';
 import { UserToUserConnectionV6Module } from './user-to-user-connection/user-to-user-connection-v6.module';
 import { UserActivityV6Module } from './user-activity/user-activity-v6.module';
+import { ActivityDefinitionV6Module } from './activity-definition/activity-definition-v6.module';
 
 @NgModule({
   imports: [CommonModule],
@@ -32,6 +33,7 @@ import { UserActivityV6Module } from './user-activity/user-activity-v6.module';
     ChallengeProgressV6Module,
     UserToUserConnectionV6Module,
     UserActivityV6Module,
+    ActivityDefinitionV6Module,
   ],
 })
 export class ServiceV6Module {
