@@ -4,7 +4,7 @@ import {
   UserProfileCollectionResponseV6,
   UserProfileCreateRequestV6,
   UserProfileResponseV6,
-  UserProfileUpdateRequestV6
+  UserProfileUpdateRequestV6,
 } from '@diamondkinetics/dk-public-dto-ts';
 import { Observable } from 'rxjs';
 import { AbstractRequestResponseResourceService } from '../../abstract-request-response-resource.service';
@@ -17,15 +17,15 @@ export class UserProfileV6Service extends AbstractRequestResponseResourceService
   UserProfileResponseV6,
   UserProfileCollectionResponseV6
 > {
-
   constructor(protected httpClient: HttpClient) {
-    super(httpClient, 6, ResourceMapping.USER_PROFILE.getPath())
+    super(httpClient, 6, ResourceMapping.USER_PROFILE.getPath());
   }
 
   public register(createRequest: UserProfileCreateRequestV6, params?: {}): Observable<UserProfileResponseV6> {
     return this.httpClient.post<UserProfileResponseV6>(
       `/v${this.versionNumber}/${ResourceMapping.USERS}`,
-      createRequest, { params }
+      createRequest,
+      { params }
     );
   }
 
@@ -39,8 +39,8 @@ export class UserProfileV6Service extends AbstractRequestResponseResourceService
   }
 
   public updateProfileImage(file: Blob, fileName: string): Observable<UserProfileResponseV6> {
-		const formData = new FormData();
-		formData.append('file', file, fileName);
+    const formData = new FormData();
+    formData.append('file', file, fileName);
 
     return this.httpClient.post<UserProfileResponseV6>(
       `/v${this.versionNumber}/${ResourceMapping.USER_PROFILE_IMAGE}`,
@@ -52,6 +52,18 @@ export class UserProfileV6Service extends AbstractRequestResponseResourceService
     return this.httpClient.post<UserProfileResponseV6>(
       `/v${this.versionNumber}/${ResourceMapping.USER_PROFILE}`,
       updateRequest
+    );
+  }
+
+  public updateSpecifiedProfile(
+    userUuid: string,
+    updateRequest: UserProfileUpdateRequestV6,
+    params?: {}
+  ): Observable<UserProfileResponseV6> {
+    return this.httpClient.post<UserProfileResponseV6>(
+      `/v${this.versionNumber}/${ResourceMapping.USERS}/${userUuid}/${ResourceMapping.PROFILE}`,
+      updateRequest,
+      { params }
     );
   }
 
