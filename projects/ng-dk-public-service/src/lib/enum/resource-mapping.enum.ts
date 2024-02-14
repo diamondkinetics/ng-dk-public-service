@@ -38,6 +38,7 @@ export class ResourceMapping {
   public static readonly BADGES = new ResourceMapping('badges');
   public static readonly CARD_DESIGNS = new ResourceMapping('cardDesigns');
   public static readonly ACTIVITY_DEFINITIONS = new ResourceMapping('activityDefinitions');
+  public static readonly INVITE = new ResourceMapping('invite');
 
   constructor(private readonly path: string) {}
 

@@ -72,4 +72,10 @@ export class UserProfileV6Service extends AbstractRequestResponseResourceService
       `/v${this.versionNumber}/${ResourceMapping.USERS}/${uuid}/${ResourceMapping.PROFILE}`
     );
   }
+
+  public getProfileByInviteUuid(inviteUuid: string): Observable<UserProfileResponseV6> {
+    return this.httpClient.get<UserProfileResponseV6>(
+      `/v${this.versionNumber}/${ResourceMapping.USERS}/${ResourceMapping.INVITE}/${inviteUuid}`
+    );
+  }
 }
