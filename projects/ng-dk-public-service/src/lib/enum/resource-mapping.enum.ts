@@ -31,7 +31,8 @@ export class ResourceMapping {
   public static readonly PITCHES = new ResourceMapping('pitches');
   public static readonly CHALLENGES = new ResourceMapping('challenges');
   public static readonly CHALLENGE_PROGRESS = new ResourceMapping('challengeProgress');
-  public static readonly USER_CONNECTIONS = new ResourceMapping(`${ResourceMapping.USERS}/connections`);
+  public static readonly CONNECTIONS = new ResourceMapping('connections');
+  public static readonly USER_CONNECTIONS = new ResourceMapping(`${ResourceMapping.USERS}/${ResourceMapping.CONNECTIONS}`);
   public static readonly LEVEL_DEFINITIONS = new ResourceMapping('levelDefinitions');
   public static readonly LEVEL_STATUSES = new ResourceMapping('levelStatuses');
   public static readonly AVATARS = new ResourceMapping('avatars');

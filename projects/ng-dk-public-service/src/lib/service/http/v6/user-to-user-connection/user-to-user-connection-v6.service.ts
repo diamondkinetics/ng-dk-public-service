@@ -25,6 +25,18 @@ export class UserToUserConnectionV6Service extends AbstractRequestResponseResour
     });
   }
 
+  public createConnectionForUser(
+    userUuid: string,
+    otherUserUuid: string,
+    params?: {}
+  ): Observable<UserToUserConnectionResponseV6> {
+    return this.httpClient.post<UserToUserConnectionResponseV6>(
+      `/v${this.versionNumber}/${ResourceMapping.USERS}/${userUuid}/${ResourceMapping.CONNECTIONS}/${otherUserUuid}`,
+      null,
+      { params }
+    );
+  }
+
   public confirmUserConnection(otherUserUuid: string, params?: {}): Observable<UserToUserConnectionResponseV6> {
     return this.httpClient.post<UserToUserConnectionResponseV6>(`${this.getBaseUri()}/${otherUserUuid}/confirm`, null, {
       params,
