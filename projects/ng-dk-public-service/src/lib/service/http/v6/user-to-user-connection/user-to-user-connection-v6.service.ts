@@ -4,9 +4,9 @@ import {
   UserToUserConnectionCollectionResponseV6,
   UserToUserConnectionResponseV6,
 } from '@diamondkinetics/dk-public-dto-ts';
+import { Observable } from 'rxjs';
 import { AbstractRequestResponseResourceService } from './../../abstract-request-response-resource.service';
 import { ResourceMapping } from './../../../../enum/resource-mapping.enum';
-import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class UserToUserConnectionV6Service extends AbstractRequestResponseResourceService<
@@ -63,6 +63,12 @@ export class UserToUserConnectionV6Service extends AbstractRequestResponseResour
   public getConnectionDetailsByUuid(userAUuid: string, userBUuid: string): Observable<UserToUserConnectionResponseV6> {
     return this.httpClient.get<UserToUserConnectionResponseV6>(
       `/v${this.versionNumber}/${ResourceMapping.USERS}/${userAUuid}/connections/${userBUuid}`
+    );
+  }
+
+  public deleteConnectionForUser(userUuid: string, otherUserUuid: string): Observable<UserToUserConnectionResponseV6> {
+    return this.httpClient.delete<UserToUserConnectionResponseV6>(
+      `/v${this.versionNumber}/${ResourceMapping.USERS}/${userUuid}/${ResourceMapping.CONNECTIONS}/${otherUserUuid}`
     );
   }
 }
