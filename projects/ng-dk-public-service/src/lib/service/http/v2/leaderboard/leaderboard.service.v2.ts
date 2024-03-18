@@ -8,24 +8,23 @@ import { ResourceMapping as route } from '../../../../enum/resource-mapping.enum
 
 @Injectable({ providedIn: 'root' })
 export class LeaderboardServiceV2 extends AbstractResourceService<LeaderboardDTOV2> {
+  constructor(protected http: HttpClient) {
+    super(http, 2, route.LEADERBOARDS.getPath());
+  }
 
-	constructor(protected http: HttpClient) {
-		super(http, 2, route.LEADERBOARDS.getPath())
-	}
+  public getForGroup(groupUuid: string): Observable<LeaderboardDTOV2[]> {
+    return this.http.get<LeaderboardDTOV2[]>(
+      `/${this.getVersionString()}/${route.GROUPS}/${groupUuid}/${route.LEADERBOARDS}`
+    );
+  }
 
-	public getForGroup(groupUuid: string): Observable<LeaderboardDTOV2> {
-		return this.http.get<LeaderboardDTOV2>(
-			`/${this.getVersionString()}/${route.GROUPS}/${groupUuid}/${route.LEADERBOARDS}`);
-	}
+  public getResults(uuid: string): Observable<LeaderboardResultDTOV2[]> {
+    return this.http.get<LeaderboardResultDTOV2[]>(`/${this.getVersionString()}/${route.LEADERBOARDS}/${uuid}/results`);
+  }
 
-	public getResults(uuid: string): Observable<LeaderboardResultDTOV2> {
-		return this.http.get<LeaderboardResultDTOV2>(
-			`/${this.getVersionString()}/${route.LEADERBOARDS}/${uuid}/results`);
-	}
-
-	public getResultsForUser(userUuid: string): Observable<LeaderboardResultDTOV2> {
-		return this.http.get<LeaderboardResultDTOV2>(
-			`/${this.getVersionString()}/${route.USERS}/${userUuid}/${route.LEADERBOARDS}`);
-	}
-
+  public getResultsForUser(userUuid: string): Observable<LeaderboardResultDTOV2[]> {
+    return this.http.get<LeaderboardResultDTOV2[]>(
+      `/${this.getVersionString()}/${route.USERS}/${userUuid}/${route.LEADERBOARDS}`
+    );
+  }
 }
