@@ -40,6 +40,7 @@ export class ResourceMapping {
   public static readonly CARD_DESIGNS = new ResourceMapping('cardDesigns');
   public static readonly ACTIVITY_DEFINITIONS = new ResourceMapping('activityDefinitions');
   public static readonly INVITE = new ResourceMapping('invite');
+  public static readonly VIEW_SECTIONS = new ResourceMapping('viewSections');
 
   constructor(private readonly path: string) {}
 
