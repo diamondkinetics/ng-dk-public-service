@@ -49,6 +49,8 @@ export { UserActivityV6Module } from './lib/service/http/v6/user-activity/user-a
 export { UserActivityV6Service } from './lib/service/http/v6/user-activity/user-activity-v6.service';
 export { ActivityDefinitionV6Module } from './lib/service/http/v6/activity-definition/activity-definition-v6.module';
 export { ActivityDefinitionV6Service } from './lib/service/http/v6/activity-definition/activity-definition-v6.service';
+export { ViewSectionV6Module } from './lib/service/http/v6/view-section/view-section-v6.module';
+export { ViewSectionV6Service } from './lib/service/http/v6/view-section/view-section-v6.service';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V4
