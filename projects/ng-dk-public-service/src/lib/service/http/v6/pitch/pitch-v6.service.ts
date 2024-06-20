@@ -13,7 +13,7 @@ export class PitchV6Service extends AbstractRequestResponseResourceService<
   PitchCollectionResponseV6
 > {
   constructor(protected httpClient: HttpClient) {
-    super(httpClient, 6, ResourceMapping.SWINGS.getPath());
+    super(httpClient, 6, ResourceMapping.PITCHES.getPath());
   }
 
   public listForPitchingSession(
