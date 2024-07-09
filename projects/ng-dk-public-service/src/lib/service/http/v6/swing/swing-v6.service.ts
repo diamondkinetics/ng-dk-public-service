@@ -28,7 +28,7 @@ export class SwingV6Service extends AbstractRequestResponseResourceService<
     params = { ...params, ...pagingParams };
 
     return this.httpClient.get<SwingCollectionResponseV6>(
-      `/${this.versionNumber}/${ResourceMapping.BATTING_SESSIONS}/${sessionUuid}/${ResourceMapping.SWINGS}`,
+      `/v${this.versionNumber}/${ResourceMapping.BATTING_SESSIONS}/${sessionUuid}/${ResourceMapping.SWINGS}`,
       { params }
     );
   }

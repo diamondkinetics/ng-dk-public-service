@@ -28,7 +28,7 @@ export class PitchV6Service extends AbstractRequestResponseResourceService<
     params = { ...params, ...pagingParams };
 
     return this.httpClient.get<PitchCollectionResponseV6>(
-      `/${this.versionNumber}/${ResourceMapping.PITCHING_SESSIONS}/${sessionUuid}/${ResourceMapping.PITCHES}`,
+      `/v${this.versionNumber}/${ResourceMapping.PITCHING_SESSIONS}/${sessionUuid}/${ResourceMapping.PITCHES}`,
       { params }
     );
   }
