@@ -1,7 +1,7 @@
 {
   "name": "@diamondkinetics/ng-dk-public-service",
   "description": "An Angular library with services for integrating with the Diamond Kinetics public API.",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "repository": "https://github.com/diamondkinetics/ng-dk-public-service",
   "license": "MIT",
   "scripts": {
@@ -21,7 +21,6 @@
     "@angular/platform-browser": "^17.2.3",
     "@angular/platform-browser-dynamic": "^17.2.3",
     "@angular/router": "^17.2.3",
-    "@diamondkinetics/dk-public-dto-ts": "^1.0.0",
     "rxjs": "^6.6.7",
     "tslib": "^2.6.2",
     "zone.js": "~0.14.4"
@@ -36,6 +35,7 @@
     "@angular/cli": "^17.2.2",
     "@angular/compiler-cli": "^17.2.3",
     "@angular/language-service": "^17.2.3",
+    "@diamondkinetics/dk-public-dto-ts": "^1.5.0",
     "@types/faker": "^4.1.12",
     "@types/jasmine": "^3.7.8",
     "@types/jasminewd2": "^2.0.10",

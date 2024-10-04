@@ -51,6 +51,8 @@ export { ActivityDefinitionV6Module } from './lib/service/http/v6/activity-defin
 export { ActivityDefinitionV6Service } from './lib/service/http/v6/activity-definition/activity-definition-v6.service';
 export { ViewSectionV6Module } from './lib/service/http/v6/view-section/view-section-v6.module';
 export { ViewSectionV6Service } from './lib/service/http/v6/view-section/view-section-v6.service';
+export { DynamicSessionResultV6Module } from './lib/service/http/v6/dynamic-session-result/dynamic-session-result-v6.module';
+export { DynamicSessionResultV6Service } from './lib/service/http/v6/dynamic-session-result/dynamic-session-result-v6.service';
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                                      V4
