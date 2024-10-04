@@ -16,6 +16,7 @@ import { UserToUserConnectionV6Module } from './user-to-user-connection/user-to-
 import { UserActivityV6Module } from './user-activity/user-activity-v6.module';
 import { ActivityDefinitionV6Module } from './activity-definition/activity-definition-v6.module';
 import { ViewSectionV6Module } from './view-section/view-section-v6.module';
+import { DynamicSessionResultV6Module } from './dynamic-session-result/dynamic-session-result-v6.module';
 
 @NgModule({
   imports: [CommonModule],
@@ -35,7 +36,8 @@ import { ViewSectionV6Module } from './view-section/view-section-v6.module';
     UserToUserConnectionV6Module,
     UserActivityV6Module,
     ActivityDefinitionV6Module,
-    ViewSectionV6Module
+    ViewSectionV6Module,
+    DynamicSessionResultV6Module,
   ],
 })
 export class ServiceV6Module {
