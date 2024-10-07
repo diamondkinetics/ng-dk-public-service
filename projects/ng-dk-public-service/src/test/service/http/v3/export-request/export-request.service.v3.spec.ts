@@ -3,15 +3,15 @@ import {
 	ExportEventSource,
 	ExportEventType,
 	ExportRequestDTOV3,
-	GroupDTOV4,
-	mockExportRequestDTOV3,
-	mockGroupDTOV4
+	GroupDTOV4
 } from '@diamondkinetics/dk-public-dto-ts';
 
 import { ExportRequestServiceV3 } from '~lib/service/http/v3/export-request/export-request.service.v3';
 import { ResourceServiceTestSuite } from '~test/service/http/resource.service.test-suite.spec';
 import { ResourceMapping as route } from '~lib/enum/resource-mapping.enum';
 import { environment } from '~test/environments/environment';
+import { mockExportRequestDTOV3 } from '~test/mock/v3/export-request.dto.v3.mock';
+import { mockGroupDTOV4 } from '~test/mock/v4/group.dto.v4.mock';
 
 class ExportRequestServiceV3TestSuite extends ResourceServiceTestSuite<ExportRequestDTOV3, ExportRequestServiceV3> {
 
@@ -41,11 +41,11 @@ class ExportRequestServiceV3TestSuite extends ResourceServiceTestSuite<ExportReq
 						expect(this.exportEventSources.find(ees => ees.getName() === s.getName())).toBeDefined()
 					});
 				});
-			
+
 				const req = this.httpTestingController.expectOne(
 					`${environment.apiUrl}/${this.service.getVersionString()}/exportEventSources`
 				);
-				
+
 				this.expectGetRequest(req.request.method);
 				req.flush(this.exportEventSources);
 			});
@@ -58,11 +58,11 @@ class ExportRequestServiceV3TestSuite extends ResourceServiceTestSuite<ExportReq
 						expect(this.exportEventTypes.find(eet => eet.getName() === t.getName())).toBeDefined()
 					});
 				});
-			
+
 				const req = this.httpTestingController.expectOne(
 					`${environment.apiUrl}/${this.service.getVersionString()}/exportEventTypes`
 				);
-				
+
 				this.expectGetRequest(req.request.method);
 				req.flush(this.exportEventTypes);
 			});

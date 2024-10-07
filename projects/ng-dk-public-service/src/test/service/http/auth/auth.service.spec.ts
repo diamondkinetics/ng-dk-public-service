@@ -4,14 +4,14 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import {
 	RegisterWithProfileRequestDTOV2,
-	UserProfileDTOV2,
-	mockUserProfileDTOV2,
-	mockRegisterWithProfileRequestDTOV2
+	UserProfileDTOV2
 } from '@diamondkinetics/dk-public-dto-ts';
 
 import { RequestInterceptor } from '~test/util/request-interceptor/request.interceptor';
 import { environment } from '~test/environments/environment';
 import { AuthService } from '~lib/service/http/auth/auth.service';
+import { mockRegisterWithProfileRequestDTOV2 } from '~test/mock/v2/register-with-profile-request.dto.v2.mock';
+import { mockUserProfileDTOV2 } from '~test/mock/v2/user-profile.dto.v2.mock';
 
 
 describe('AuthService', () => {
