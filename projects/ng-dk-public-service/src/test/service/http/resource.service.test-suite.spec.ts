@@ -40,7 +40,7 @@ export abstract class ResourceServiceTestSuite<T extends AbstractSyncableDTO, S 
     beforeEach(() => {
       TestBed.configureTestingModule({
         imports: [],
-        providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()],
+        providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting(), ...this.providers],
       });
 
       this.httpTestingController = TestBed.inject(HttpTestingController);
